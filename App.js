@@ -10,14 +10,8 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, Image, View, SafeAreaView, ScrollView, Dimensions} from 'react-native';
 import {createDrawerNavigator, DrawerItems} from 'react-navigation';
 import HomeScreen from './screens/HomeScreen';
-import SettingsScreen from './screens/SettingsScreen'
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import SettingsScreen from './screens/SettingsScreen';
+import CloneScreen from './screens/CloneScreen'
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -53,12 +47,28 @@ const CustomDrawerComponent = (props) => (
 )
 
 const AppDrawerNavigator = createDrawerNavigator({
-  Home:{screen: HomeScreen},
-  Settings:{screen: (props) => <SettingsScreen {...props.navigation.state.params} propName={"Original"} />},
-  Alternate:{screen: (props) => <SettingsScreen {...props.navigation.state.params} propName={"Alternate"} />}
-},{
-  contentComponent: CustomDrawerComponent
-})
+    Tú:{
+      screen: props => <HomeScreen {...props.navigation.state.params} slot={0} />
+    },
+    Laboratorios:{
+      screen: props => <HomeScreen {...props.navigation.state.params} slot={1} />
+    },
+    Departamentos:{
+      screen: props => <HomeScreen {...props.navigation.state.params} slot={2} />
+    },
+    Canchas:{
+      screen: props => <HomeScreen {...props.navigation.state.params} slot={3} />
+    },
+    Parqueaderos:{
+      screen: props => <HomeScreen {...props.navigation.state.params} slot={4} />
+    },
+    Settings:{
+      screen: props => <SettingsScreen {...props.navigation.state.params} propName={"Original"} />
+    }
+  },{
+    contentComponent: CustomDrawerComponent
+  }
+)
 
 const styles = StyleSheet.create({
   container: {
