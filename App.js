@@ -33,7 +33,7 @@ const CustomDrawerComponent = (props) => (
       <Image style={{flex: 1, resizeMode: 'contain'}} source={require('./resources/headerlogo_un.png')} />
       
     </View>
-    <Text style={{paddingVertical: 5, paddingLeft: 10, backgroundColor: '#f5f5f0'}}>Marcar en mapa:</Text>
+    <Text style={{paddingVertical: 5, paddingLeft: 10, backgroundColor: '#f5f5f0'}}>Marcadores importantes:</Text>
     <View
       style={{
         paddingTop: 5,
@@ -48,22 +48,19 @@ const CustomDrawerComponent = (props) => (
 
 const AppDrawerNavigator = createDrawerNavigator({
     Tú:{
-      screen: props => <HomeScreen {...props.navigation.state.params} slot={0} />
+      screen: props => <HomeScreen {...props} slot={0} />
     },
     Laboratorios:{
-      screen: props => <HomeScreen {...props.navigation.state.params} slot={1} />
+      screen: props => <HomeScreen {...props} slot={1} />
     },
     Departamentos:{
-      screen: props => <HomeScreen {...props.navigation.state.params} slot={2} />
+      screen: props => <HomeScreen {...props} slot={2} />
     },
     Canchas:{
-      screen: props => <HomeScreen {...props.navigation.state.params} slot={3} />
+      screen: props => <HomeScreen {...props} slot={3} />
     },
     Parqueaderos:{
-      screen: props => <HomeScreen {...props.navigation.state.params} slot={4} />
-    },
-    Settings:{
-      screen: props => <SettingsScreen {...props.navigation.state.params} propName={"Original"} />
+      screen: props => <HomeScreen {...props} slot={4} />
     }
   },{
     contentComponent: CustomDrawerComponent

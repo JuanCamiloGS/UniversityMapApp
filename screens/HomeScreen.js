@@ -1,24 +1,37 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity, ScrollView, TextInput} from 'react-native';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
 import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
+import {Header, Icon, Left} from 'native-base'
 
 Mapbox.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
 
 
 class Home extends Component<{}> {
 
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-      hidden: true
+      hidden: true,
+      pointName: "TEST NAME",
+      pointDesc: "TEST DESC"
     }
     OptionSelect = this.OptionSelect;
     MapboxPoint = this.MapboxPoint;
     showMenu = this.showMenu.bind(this);
+    toggleVis = this.toggleVis.bind(this);
+    //console.log(this.props.navigation)
   }
 
-  showMenu(){
+  showMenu(obj){
+    this.setState({
+      hidden: false,
+      pointName: obj.nombre,
+      pointDesc: obj.descripcion
+    })
+  }
+
+  toggleVis(){
     this.setState({
       hidden: !this.state.hidden
     })
@@ -77,11 +90,24 @@ class Home extends Component<{}> {
                         minZoomLevel={16}>
           {this.renderAnnotations()}
         </Mapbox.MapView>
-
-        {this.state.hidden && 
-        <View style={styles.floatingMenu}>
-          <TouchableOpacity style={styles.closeButton}><Text>CERRAR</Text></TouchableOpacity>
+        <View style={styles.floatingInput}>
+          <TouchableOpacity style={{flex: 1, alignItems: 'center'}} onPress={() => this.props.navigation.openDrawer()}>
+            <Icon name='menu' />
+          </TouchableOpacity>
+          <TextInput style={{flex: 7}} placeholder="Digite un destino..."></TextInput>
         </View>
+
+        {!this.state.hidden && 
+        <ScrollView style={styles.floatingMenu}>
+          
+          <View style={styles.menuContent}>
+            <Text style={{fontWeight: 'bold'}}>{this.state.pointName}</Text>
+            <Text>{this.state.pointDesc}</Text>
+          </View>
+          <TouchableOpacity style={styles.closeButton} onPress={toggleVis}>
+            <Text style={{fontSize: 10}}> CERRAR </Text>
+          </TouchableOpacity>
+        </ScrollView>
         }
         
       </View>
@@ -114,10 +140,22 @@ const styles = StyleSheet.create({
       backgroundColor: 'red',
       transform: [{ scale: 0.6 }],
     },
+    floatingInput: {
+      position: 'absolute',
+      left: width/20,
+      top: 20,
+      width: width-width/10,
+      backgroundColor: 'white',
+      borderRadius: 5,
+      elevation: 3,
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
     floatingMenu: {
       position: 'absolute',
       backgroundColor: 'white',
-      left: width/20,
+      left: width/20 + 2,
       bottom: 10,
       width: width-width/10,
       height: height/5,
@@ -126,7 +164,14 @@ const styles = StyleSheet.create({
     },
     closeButton:{
       position: 'absolute', 
-      top: 4,
-      right: 7
+      top: 0,
+      right: 0,
+      elevation: 1,
+      borderRadius: 3,
+      backgroundColor: '#fca9a9',
+    },
+    menuContent: {
+      paddingVertical: 14,
+      paddingHorizontal: 10,
     }
 })
