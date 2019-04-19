@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity, ScrollView, TextInput} from 'react-native';
-import Mapbox from '@mapbox/react-native-mapbox-gl';
+import MapboxGL from '@mapbox/react-native-mapbox-gl';
 import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
-import {Header, Icon, Left} from 'native-base'
+import {Header, Icon, Left, Button} from 'native-base'
+import ShapeSource from '@mapbox/react-native-mapbox-gl/javascript/components/ShapeSource';
+import indoorMap2 from '../resources/2ndfloor.json';
+import indoorMap3 from '../resources/3rdfloor.json';
 
-Mapbox.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
+MapboxGL.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
 
 
 class Home extends Component<{}> {
@@ -14,13 +17,14 @@ class Home extends Component<{}> {
     this.state = {
       hidden: true,
       pointName: "TEST NAME",
-      pointDesc: "TEST DESC"
+      pointDesc: "TEST DESC",
+      floorMap: indoorMap2
     }
     OptionSelect = this.OptionSelect;
     MapboxPoint = this.MapboxPoint;
     showMenu = this.showMenu.bind(this);
     toggleVis = this.toggleVis.bind(this);
-    //console.log(this.props.navigation)
+    changeFloor = this.changeFloor.bind(this);
   }
 
   showMenu(obj){
@@ -37,18 +41,22 @@ class Home extends Component<{}> {
     })
   }
 
-  
+  changeFloor(){
+    this.setState({
+      floorMap: indoorMap3
+    })
+  }
 
   MapboxPoint(props){
     const obj = props.obj;
-    return  <Mapbox.PointAnnotation
+    return  <MapboxGL.PointAnnotation
               key={'P'+obj.id}
               id={'P'+obj.id}
               coordinate={[obj.lon, obj.lat]}>
               <TouchableOpacity style={styles.annotationContainer} onPress={() => showMenu(obj)}>
                 <View style={styles.annotationFill}  />
               </TouchableOpacity>
-            </Mapbox.PointAnnotation>;
+            </MapboxGL.PointAnnotation>;
   }
 
   OptionSelect(props) {
@@ -83,13 +91,18 @@ class Home extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Mapbox.MapView //styleURL={'https://puerti.co/mobility/uninorte.json'} 
+        <MapboxGL.MapView styleURL={'asset://bright.json'}
                         zoomLevel={16} 
                         centerCoordinate={[-74.8503,11.0191]} 
                         style={styles.container}
                         minZoomLevel={16}>
           {this.renderAnnotations()}
-        </Mapbox.MapView>
+          <MapboxGL.ShapeSource id="indoorSource" shape={this.state.floorMap} >
+            <MapboxGL.FillLayer id="whatever" style={mb_styles.buildings} minZoomLevel={17.5} />
+            <MapboxGL.SymbolLayer id="points" style={mb_styles.pointers} minZoomLevel={19}/>
+          </MapboxGL.ShapeSource>
+        </MapboxGL.MapView>
+
         <View style={styles.floatingInput}>
           <TouchableOpacity style={{flex: 1, alignItems: 'center'}} onPress={() => this.props.navigation.openDrawer()}>
             <Icon name='menu' />
@@ -109,6 +122,8 @@ class Home extends Component<{}> {
           </TouchableOpacity>
         </ScrollView>
         }
+
+        <Button onPress={changeFloor}><Text>Click Me!</Text></Button>
         
       </View>
     );
@@ -175,3 +190,17 @@ const styles = StyleSheet.create({
       paddingHorizontal: 10,
     }
 })
+
+const mb_styles = MapboxGL.StyleSheet.create({
+  buildings: {
+    fillColor: MapboxGL.StyleSheet.identity('color'),
+    fillOutlineColor: 'black'
+  },
+  street: {
+    lineColor: 'green',
+  },
+  pointers: {
+    textField: MapboxGL.StyleSheet.identity('name')
+  }
+
+});

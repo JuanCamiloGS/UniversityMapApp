@@ -1,0 +1,36 @@
+{
+    "version": 8,
+    "sources": {
+      "uninorte": {
+        "type": "vector",
+        "tiles": ["asset://tiles/{z}/{x}/{y}.pbf"],
+        "maxzoom": 24
+      }
+    },
+    "glyphs": "http://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
+    "layers": [{
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#ffffff"
+      }
+      },{
+      "id": "buldings",
+      "source": "uninorte",
+      "source-layer": "building",
+      "type": "fill",
+     "paint": {
+        "fill-color": "#000000"
+      }
+  
+      },{
+      "id": "roads",
+      "source": "uninorte",
+      "source-layer": "transportation",
+      "type": "line",
+     "paint": {
+        "line-color": "#FF0000"
+      }
+  
+    }]
+  }
