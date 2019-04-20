@@ -4,8 +4,9 @@ import MapboxGL from '@mapbox/react-native-mapbox-gl';
 import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
 import {Header, Icon, Left, Button} from 'native-base'
 import ShapeSource from '@mapbox/react-native-mapbox-gl/javascript/components/ShapeSource';
+import indoorMap1 from '../resources/1stfloor.json';
 import indoorMap2 from '../resources/2ndfloor.json';
-import indoorMap3 from '../resources/3rdfloor.json';
+import {Floors} from '../resources/floors.js'
 
 MapboxGL.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
 
@@ -16,15 +17,18 @@ class Home extends Component<{}> {
     super(props)
     this.state = {
       hidden: true,
+      hidden2: false,
       pointName: "TEST NAME",
       pointDesc: "TEST DESC",
-      floorMap: indoorMap2
+      floorMap: Floors[0].map,
+      currentFloor: 1
     }
     OptionSelect = this.OptionSelect;
     MapboxPoint = this.MapboxPoint;
     showMenu = this.showMenu.bind(this);
     toggleVis = this.toggleVis.bind(this);
     changeFloor = this.changeFloor.bind(this);
+    FloorButton = this.FloorButton.bind(this);
   }
 
   showMenu(obj){
@@ -41,10 +45,26 @@ class Home extends Component<{}> {
     })
   }
 
-  changeFloor(){
+  changeFloor(props){
     this.setState({
-      floorMap: indoorMap3
+      floorMap: props.map,
+      currentFloor: props.floor
     })
+  }
+
+  FloorButton(props){
+    color = '#eaedf2';
+    if(props.floor == this.state.currentFloor){
+      color = '#e0dd8d'
+    }
+    return <TouchableOpacity onPress={() => changeFloor(props)} 
+            style={{
+              backgroundColor: color,
+              borderRadius: 3,
+              marginVertical: 2
+            }}>
+            <Text style={{textAlign: 'center'}}>{props.floor}</Text>
+           </TouchableOpacity>
   }
 
   MapboxPoint(props){
@@ -91,11 +111,14 @@ class Home extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
+
+        {/* Map Object */}
         <MapboxGL.MapView styleURL={'asset://bright.json'}
                         zoomLevel={16} 
                         centerCoordinate={[-74.8503,11.0191]} 
                         style={styles.container}
-                        minZoomLevel={16}>
+                        minZoomLevel={16}
+                        compassEnabled={false}>
           {this.renderAnnotations()}
           <MapboxGL.ShapeSource id="indoorSource" shape={this.state.floorMap} >
             <MapboxGL.FillLayer id="whatever" style={mb_styles.buildings} minZoomLevel={17.5} />
@@ -103,6 +126,8 @@ class Home extends Component<{}> {
           </MapboxGL.ShapeSource>
         </MapboxGL.MapView>
 
+
+        {/* Floating Input Object */}
         <View style={styles.floatingInput}>
           <TouchableOpacity style={{flex: 1, alignItems: 'center'}} onPress={() => this.props.navigation.openDrawer()}>
             <Icon name='menu' />
@@ -110,6 +135,8 @@ class Home extends Component<{}> {
           <TextInput style={{flex: 7}} placeholder="Digite un destino..."></TextInput>
         </View>
 
+
+        {/* Point Description and Menu */}
         {!this.state.hidden && 
         <ScrollView style={styles.floatingMenu}>
           
@@ -123,7 +150,18 @@ class Home extends Component<{}> {
         </ScrollView>
         }
 
-        <Button onPress={changeFloor}><Text>Click Me!</Text></Button>
+
+        {/* Floor Selection Object */}
+        {!this.state.hidden2 &&
+        <View style={styles.floatingFloors}>
+          <Text style={{fontSize: 6, textAlign: 'center'}}>PISO</Text>
+          <Icon name='md-arrow-dropup' style={{textAlign: 'center', color: 'gray', lineHeight: 15, fontSize: 15}}/>
+          <ScrollView>
+            {Floors.map((flo, i) => <FloorButton floor={flo.label} map={flo.map} key={'F'+flo.label} />)}
+          </ScrollView>
+          <Icon name='md-arrow-dropdown' style={{textAlign: 'center', color: 'gray', lineHeight: 15, fontSize: 15}}/>
+        </View>
+        }
         
       </View>
     );
@@ -131,6 +169,8 @@ class Home extends Component<{}> {
 }
 
 export default Home;
+
+
 
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
@@ -188,6 +228,22 @@ const styles = StyleSheet.create({
     menuContent: {
       paddingVertical: 14,
       paddingHorizontal: 10,
+    },
+    floatingFloors: {
+      position: 'absolute',
+      backgroundColor: 'white',
+      height: height/5,
+      width: width/20,
+      bottom: height/2-height/10,
+      right: 5,
+      borderRadius: 6,
+      elevation: 3,
+      padding: 2
+    },
+    floorButton: {
+      backgroundColor: '#eaedf2',
+      borderRadius: 3,
+      marginVertical: 2
     }
 })
 
