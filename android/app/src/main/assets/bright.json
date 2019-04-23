@@ -41,7 +41,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "tiles": ["asset://tiles2/{z}/{x}/{y}.pbf"]
+      "tiles": ["asset://uninorte/{z}/{x}/{y}.pbf"]
     }
   },
   "sprite": "mapbox://sprites/mapbox/basic-v9",

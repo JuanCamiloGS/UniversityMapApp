@@ -121,7 +121,7 @@ class Home extends Component<{}> {
                         compassEnabled={false}>
           {this.renderAnnotations()}
           <MapboxGL.ShapeSource id="indoorSource" shape={this.state.floorMap} >
-            <MapboxGL.FillLayer id="whatever" style={mb_styles.buildings} minZoomLevel={17.5} />
+            <MapboxGL.FillLayer id="whatever" style={mb_styles.buildings} minZoomLevel={18.5} />
             <MapboxGL.SymbolLayer id="points" style={mb_styles.pointers} minZoomLevel={19}/>
           </MapboxGL.ShapeSource>
         </MapboxGL.MapView>
