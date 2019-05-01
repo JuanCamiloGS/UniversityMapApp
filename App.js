@@ -11,7 +11,6 @@ import {Platform, StyleSheet, Text, Image, View, SafeAreaView, ScrollView, Dimen
 import {createDrawerNavigator, DrawerItems} from 'react-navigation';
 import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
-import CloneScreen from './screens/CloneScreen'
 
 type Props = {};
 export default class App extends Component<Props> {

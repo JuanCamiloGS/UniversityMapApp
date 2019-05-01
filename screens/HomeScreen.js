@@ -4,9 +4,9 @@ import MapboxGL from '@mapbox/react-native-mapbox-gl';
 import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
 import {Header, Icon, Left, Button} from 'native-base'
 import ShapeSource from '@mapbox/react-native-mapbox-gl/javascript/components/ShapeSource';
-import indoorMap1 from '../resources/1stfloor.json';
-import indoorMap2 from '../resources/2ndfloor.json';
 import {Floors} from '../resources/floors.js'
+import Autocomplete from 'react-native-autocomplete-input';
+var polyline = require('@mapbox/polyline');
 
 MapboxGL.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
 
@@ -20,8 +20,14 @@ class Home extends Component<{}> {
       hidden2: false,
       pointName: "TEST NAME",
       pointDesc: "TEST DESC",
-      floorMap: Floors[0].map,
-      currentFloor: 1
+      floorMap: Floors[1].map,
+      currentFloor: 1,
+      route: {
+        "type": "LineString",
+        "coordinates": [
+        ]
+      },
+      query: ''
     }
     OptionSelect = this.OptionSelect;
     MapboxPoint = this.MapboxPoint;
@@ -29,6 +35,7 @@ class Home extends Component<{}> {
     toggleVis = this.toggleVis.bind(this);
     changeFloor = this.changeFloor.bind(this);
     FloorButton = this.FloorButton.bind(this);
+    getRouteData = this.getRouteData.bind(this);
   }
 
   showMenu(obj){
@@ -50,6 +57,20 @@ class Home extends Component<{}> {
       floorMap: props.map,
       currentFloor: props.floor
     })
+  }
+
+  getRouteData(){
+    fetch('http://159.89.22.204:8002/route', {method: 'POST', body: '{"locations":[{"lat":11.019573,"lon":-74.849811,"type":"break"},{"lat":11.019805,"lon":-74.850563,"type":"break"}],"costing":"pedestrian","directions_options":{"units":"metres"}}'})
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6)
+        })
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    
   }
 
   FloorButton(props){
@@ -108,7 +129,43 @@ class Home extends Component<{}> {
     )
   }
 
+  findFilm(query) {
+    //method called everytime when we change the value of the input
+    if (query === '') {
+      //if the query is null then return blank
+      return [];
+    }
+ 
+    const films = [
+      {
+        "title": "Parameter A",
+        "release_date": "Parameter B"
+      },
+      { 
+        "title": "2nd Parameter A",
+        "release_date": "2nd Parameter B"
+      },
+      { 
+        "title": "3rd Parameter A",
+        "release_date": "3rd Parameter B"
+      },
+      { 
+        "title": "4th Parameter A",
+        "release_date": "4th Parameter B"
+      }
+    ];
+
+    //making a case insensitive regular expression to get similar value from the film json
+    const regex = new RegExp(`${query.trim()}`, 'i');
+    //return the filtered film array according the query from the input
+    return films.filter(film => film.title.search(regex) >= 0);
+  }
+
   render() {
+    const query = this.state.query;
+    const data = this.findFilm(query);
+    const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
+    const rows = data.length === 1 && comp(query, data[0].title) ? [] : data;
     return (
       <View style={styles.container}>
 
@@ -121,20 +178,43 @@ class Home extends Component<{}> {
                         compassEnabled={false}>
           {this.renderAnnotations()}
           <MapboxGL.ShapeSource id="indoorSource" shape={this.state.floorMap} >
-            <MapboxGL.FillLayer id="whatever" style={mb_styles.buildings} minZoomLevel={18.5} />
-            <MapboxGL.SymbolLayer id="points" style={mb_styles.pointers} minZoomLevel={19}/>
+            <MapboxGL.FillLayer id="rooms" style={mb_styles.buildings} filter={['==', 'building', 'university']} minZoomLevel={18.5}/>
+            <MapboxGL.LineLayer id="roads" style={mb_styles.street} filter={['==', 'highway', 'footway']} minZoomLevel={18.5} />
+            <MapboxGL.SymbolLayer id="points" style={mb_styles.pointers} minZoomLevel={19.2}/>
+          </MapboxGL.ShapeSource>
+          
+          <MapboxGL.ShapeSource id='routeSource' shape={this.state.route}>
+            <MapboxGL.LineLayer id='routeLayer' style={{lineColor:'red'}} />
           </MapboxGL.ShapeSource>
         </MapboxGL.MapView>
 
 
         {/* Floating Input Object */}
+        {this.props.slot==0 &&
         <View style={styles.floatingInput}>
           <TouchableOpacity style={{flex: 1, alignItems: 'center'}} onPress={() => this.props.navigation.openDrawer()}>
             <Icon name='menu' />
           </TouchableOpacity>
-          <TextInput style={{flex: 7}} placeholder="Digite un destino..."></TextInput>
+          {/* <TextInput style={{flex: 7}} placeholder="Digite un destino..."></TextInput> */}
+          <View style={{flex: 7}}>
+            <Autocomplete
+              data={rows} 
+              defaultValue={query}
+              onChangeText={text => this.setState({ query: text })}
+              placeholder="Digite un destino..."
+              keyExtractor={(item, index) => ("S"+index)}
+              inputContainerStyle={styles.autocompleteContainer}
+              renderItem={({item, index} ) => (
+                <TouchableOpacity onPress={() => this.setState({ query: item.title })}>
+                  <Text style={styles.itemText}>
+                    {item.title} ({item.release_date}) - {index}
+                  </Text>
+                </TouchableOpacity>
+              )}
+            />
+          </View>
         </View>
-
+        }
 
         {/* Point Description and Menu */}
         {!this.state.hidden && 
@@ -162,8 +242,9 @@ class Home extends Component<{}> {
           <Icon name='md-arrow-dropdown' style={{textAlign: 'center', color: 'gray', lineHeight: 15, fontSize: 15}}/>
         </View>
         }
-        
-      </View>
+
+        <Button onPress={getRouteData}><Text>Get JSON</Text></Button>
+        </View>
     );
   }
 }
@@ -244,19 +325,28 @@ const styles = StyleSheet.create({
       backgroundColor: '#eaedf2',
       borderRadius: 3,
       marginVertical: 2
-    }
+    },
+    autocompleteContainer: {
+      borderWidth: 0
+    },
+    itemText: {
+      margin: 2
+    },
 })
 
 const mb_styles = MapboxGL.StyleSheet.create({
   buildings: {
-    fillColor: MapboxGL.StyleSheet.identity('color'),
+    fillColor: '#e8e3b7', //MapboxGL.StyleSheet.identity('color'),
     fillOutlineColor: 'black'
   },
   street: {
     lineColor: 'green',
+    lineOpacity: 0.6,
+    lineDasharray: [2,2]
   },
   pointers: {
-    textField: MapboxGL.StyleSheet.identity('name')
+    textField: MapboxGL.StyleSheet.identity('name'),
+    textSize: 13
   }
 
 });
