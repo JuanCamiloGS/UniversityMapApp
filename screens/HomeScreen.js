@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity, ScrollView, TextInput} from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity, ScrollView, TextInput, Keyboard} from 'react-native';
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
 import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
 import {Header, Icon, Left, Button} from 'native-base'
@@ -36,6 +36,30 @@ class Home extends Component<{}> {
     changeFloor = this.changeFloor.bind(this);
     FloorButton = this.FloorButton.bind(this);
     getRouteData = this.getRouteData.bind(this);
+  }
+
+  componentWillMount () {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow.bind(this));
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide.bind(this));
+  }
+
+  componentWillUnmount () {
+    this.keyboardDidShowListener.remove();
+    this.keyboardDidHideListener.remove();
+  }
+
+  _keyboardDidShow () {
+    //alert('Keyboard Shown');
+    this.setState({
+      hidden2: true
+    })
+  }
+
+  _keyboardDidHide () {
+    //alert('Keyboard Hidden');
+    this.setState({
+      hidden2: false
+    })
   }
 
   showMenu(obj){
@@ -203,7 +227,9 @@ class Home extends Component<{}> {
               onChangeText={text => this.setState({ query: text })}
               placeholder="Digite un destino..."
               keyExtractor={(item, index) => ("S"+index)}
-              inputContainerStyle={styles.autocompleteContainer}
+              containerStyle={{margin: 2}}
+              inputContainerStyle={{borderWidth: 0}}
+              listContainerStyle={{position: 'relative'}}
               renderItem={({item, index} ) => (
                 <TouchableOpacity onPress={() => this.setState({ query: item.title })}>
                   <Text style={styles.itemText}>
