@@ -1,0 +1,646 @@
+
+{
+    "type": "FeatureCollection",
+    "generator": "JOSM",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque de Ciencias Basicas"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85102928264,
+                    11.02074881759
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Parqueadero"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84948527764,
+                    11.02016731128
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque C"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85095254129,
+                    11.01900580021
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "DuNord Terrase"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85048596324,
+                    11.02019743967
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque J"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85164473439,
+                    11.01897416370
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque I1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85060107219,
+                    11.01964229522
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cementerio Jardines del Recuerdo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84766501240,
+                    11.01808231850
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque K"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85117662307,
+                    11.02021853209
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cancha de Baloncesto"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84997948049,
+                    11.02035260854
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque Administrativo II"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85201615507,
+                    11.01855836924
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque B"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85100779396,
+                    11.01876476004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": null,
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85065718751,
+                        11.01976752211
+                    ],
+                    [
+                        -74.85063541258,
+                        11.01984633070
+                    ],
+                    [
+                        -74.85084059565,
+                        11.01990178859
+                    ],
+                    [
+                        -74.85086352177,
+                        11.01982589894
+                    ],
+                    [
+                        -74.85065718751,
+                        11.01976752211
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Canchas de Raquetball"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85070390584,
+                    11.02004679170
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Parqueadero 10"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84585701938,
+                    11.01956169987
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Puerta 7"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84960192216,
+                    11.01920616621
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Biblioteca Karl C. Parrish"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85022504942,
+                    11.01788345673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": null,
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85099647349,
+                        11.01959917117
+                    ],
+                    [
+                        -74.85072251237,
+                        11.01952535278
+                    ],
+                    [
+                        -74.85074649346,
+                        11.01944456673
+                    ],
+                    [
+                        -74.85102035859,
+                        11.01952354011
+                    ],
+                    [
+                        -74.85099647349,
+                        11.01959917117
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cancha de Tenis"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85005161591,
+                    11.02011156947
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque L1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85062716449,
+                    11.01845291402
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque I2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85075455181,
+                    11.01983964628
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque L"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85160943561,
+                    11.01929354317
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "DuNord Café"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85028030208,
+                    11.01956471286
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque M"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84837408365,
+                    11.01959936080
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque Administrativo I (Casa Blanca)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85120731900,
+                    11.01812449763
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque M"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84850454132,
+                    11.01974549101
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque D"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85012068328,
+                    11.01820283588
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque E"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85004547673,
+                    11.01848605709
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque F"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84997948049,
+                    11.01869696746
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque I4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85099014303,
+                    11.01974398376
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": null,
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85093872736,
+                        11.01959032106
+                    ],
+                    [
+                        -74.85084414497,
+                        11.01990310686
+                    ],
+                    [
+                        -74.85099489059,
+                        11.01994025126
+                    ],
+                    [
+                        -74.85111954487,
+                        11.01952375204
+                    ],
+                    [
+                        -74.85103369220,
+                        11.01950153119
+                    ],
+                    [
+                        -74.85100067039,
+                        11.01960522088
+                    ],
+                    [
+                        -74.85093872736,
+                        11.01959032106
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "El Camion"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85069776665,
+                    11.02065240212
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque L3"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85047675446,
+                    11.01898470921
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": null,
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85074116959,
+                        11.01944197739
+                    ],
+                    [
+                        -74.85063161148,
+                        11.01984550675
+                    ],
+                    [
+                        -74.85057952434,
+                        11.01983216014
+                    ],
+                    [
+                        -74.85056286941,
+                        11.01989383233
+                    ],
+                    [
+                        -74.85045535276,
+                        11.01986732156
+                    ],
+                    [
+                        -74.85058920075,
+                        11.01939874792
+                    ],
+                    [
+                        -74.85074116959,
+                        11.01944197739
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque G"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84971856667,
+                    11.01972440156
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque L5"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85202075946,
+                    11.01813052214
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Almacenes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84977688892,
+                    11.02022154508
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque M"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84835566609,
+                    11.01972590655
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Parqueadero 9"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84890972753,
+                    11.02009499803
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85109067295,
+                    11.01848304409
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Coliseo Los Fundadores"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85036317954,
+                    11.02034356958
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque J"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85171686981,
+                    11.01870148696
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque L2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85055195948,
+                    11.01871353898
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque I3"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85086659194,
+                    11.01952177542
+                ]
+            }
+        }
+    ]
+}

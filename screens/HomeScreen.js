@@ -4,7 +4,7 @@ import MapboxGL from '@mapbox/react-native-mapbox-gl';
 import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
 import {Header, Icon, Left, Button} from 'native-base'
 import ShapeSource from '@mapbox/react-native-mapbox-gl/javascript/components/ShapeSource';
-import {Floors} from '../resources/floors.js'
+import {General, Floors, POI} from '../resources/floors.js'
 import Autocomplete from 'react-native-autocomplete-input';
 var polyline = require('@mapbox/polyline');
 
@@ -38,6 +38,8 @@ class Home extends Component<{}> {
     getRouteData = this.getRouteData.bind(this);
   }
 
+  // Keyboard Control
+
   componentWillMount () {
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow.bind(this));
     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide.bind(this));
@@ -49,18 +51,19 @@ class Home extends Component<{}> {
   }
 
   _keyboardDidShow () {
-    //alert('Keyboard Shown');
     this.setState({
       hidden2: true
     })
   }
 
   _keyboardDidHide () {
-    //alert('Keyboard Hidden');
     this.setState({
-      hidden2: false
+      hidden2: false,
+      query: ''
     })
   }
+
+  // Informacion de punto
 
   showMenu(obj){
     this.setState({
@@ -75,6 +78,19 @@ class Home extends Component<{}> {
       hidden: !this.state.hidden
     })
   }
+
+  findData(query) {
+
+    if (query === '') {
+      return [];
+    }
+    //making a case insensitive regular expression to get similar value from the film json
+    const regex = new RegExp(`${query.trim()}`, 'i');
+    //return the filtered film array according the query from the input
+    return POI.filter(point => point['properties']['name'].search(regex) >= 0);
+  }
+
+  // Información Indoors
 
   changeFloor(props){
     this.setState({
@@ -96,6 +112,8 @@ class Home extends Component<{}> {
       });
     
   }
+
+  // Funciones de Componentes
 
   FloorButton(props){
     color = '#eaedf2';
@@ -153,54 +171,29 @@ class Home extends Component<{}> {
     )
   }
 
-  findFilm(query) {
-    //method called everytime when we change the value of the input
-    if (query === '') {
-      //if the query is null then return blank
-      return [];
-    }
- 
-    const films = [
-      {
-        "title": "Parameter A",
-        "release_date": "Parameter B"
-      },
-      { 
-        "title": "2nd Parameter A",
-        "release_date": "2nd Parameter B"
-      },
-      { 
-        "title": "3rd Parameter A",
-        "release_date": "3rd Parameter B"
-      },
-      { 
-        "title": "4th Parameter A",
-        "release_date": "4th Parameter B"
-      }
-    ];
-
-    //making a case insensitive regular expression to get similar value from the film json
-    const regex = new RegExp(`${query.trim()}`, 'i');
-    //return the filtered film array according the query from the input
-    return films.filter(film => film.title.search(regex) >= 0);
-  }
+  // Render
 
   render() {
     const query = this.state.query;
-    const data = this.findFilm(query);
+    const data = this.findData(query);
     const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
-    const rows = data.length === 1 && comp(query, data[0].title) ? [] : data;
+    const rows = data.length === 1 && comp(query, data[0]['properties']['name']) ? [] : data.slice(0,5);
+
     return (
       <View style={styles.container}>
 
         {/* Map Object */}
-        <MapboxGL.MapView styleURL={'asset://bright.json'}
+        <MapboxGL.MapView styleURL={'asset://style/bright.json'}
                         zoomLevel={16} 
                         centerCoordinate={[-74.8503,11.0191]} 
                         style={styles.container}
                         minZoomLevel={16}
                         compassEnabled={false}>
           {this.renderAnnotations()}
+          <MapboxGL.ShapeSource id='outdoorSource' shape={General}>
+            <MapboxGL.SymbolLayer id='majorPoints' style={mb_styles.majorPointers} minZoomLevel={17} maxZoomLevel={19.2} />
+          </MapboxGL.ShapeSource>
+
           <MapboxGL.ShapeSource id="indoorSource" shape={this.state.floorMap} >
             <MapboxGL.FillLayer id="rooms" style={mb_styles.buildings} filter={['==', 'building', 'university']} minZoomLevel={18.5}/>
             <MapboxGL.LineLayer id="roads" style={mb_styles.street} filter={['==', 'highway', 'footway']} minZoomLevel={18.5} />
@@ -228,12 +221,12 @@ class Home extends Component<{}> {
               placeholder="Digite un destino..."
               keyExtractor={(item, index) => ("S"+index)}
               containerStyle={{margin: 2}}
-              inputContainerStyle={{borderWidth: 0}}
-              listContainerStyle={{position: 'relative'}}
+              inputContainerStyle={{borderWidth: 0, borderBottomWidth: 1, marginBottom: 1}}
+              listStyle={{borderBottomWidth: 0}}
               renderItem={({item, index} ) => (
-                <TouchableOpacity onPress={() => this.setState({ query: item.title })}>
+                <TouchableOpacity onPress={() => this.setState({ query: item['properties']['name'] })}>
                   <Text style={styles.itemText}>
-                    {item.title} ({item.release_date}) - {index}
+                    {item['properties']['name']} ({item.properties.level})
                   </Text>
                 </TouchableOpacity>
               )}
@@ -357,7 +350,7 @@ const styles = StyleSheet.create({
     },
     itemText: {
       margin: 2
-    },
+    }
 })
 
 const mb_styles = MapboxGL.StyleSheet.create({
@@ -372,7 +365,12 @@ const mb_styles = MapboxGL.StyleSheet.create({
   },
   pointers: {
     textField: MapboxGL.StyleSheet.identity('name'),
-    textSize: 13
+    textSize: 10
+  },
+  majorPointers: {
+    textField: MapboxGL.StyleSheet.identity('name'),
+    textSize: 9,
+    iconImage: 'airport_15'
   }
 
 });

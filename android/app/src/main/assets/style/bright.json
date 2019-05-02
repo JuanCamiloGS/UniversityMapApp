@@ -41,11 +41,11 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "tiles": ["asset://uninorte/{z}/{x}/{y}.pbf"]
+      "tiles": ["asset://style/uninorte/{z}/{x}/{y}.pbf"]
     }
   },
-  "sprite": "mapbox://sprites/mapbox/basic-v9",
-  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "sprite": "asset://style/sprite/osm-liberty",
+  "glyphs": "asset://style/font/{fontstack}/{range}.pbf",
   "layers": [
   {
     "id": "background",
