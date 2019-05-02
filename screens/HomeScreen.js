@@ -191,7 +191,7 @@ class Home extends Component<{}> {
                         compassEnabled={false}>
           {this.renderAnnotations()}
           <MapboxGL.ShapeSource id='outdoorSource' shape={General}>
-            <MapboxGL.SymbolLayer id='majorPoints' style={mb_styles.majorPointers} minZoomLevel={17} maxZoomLevel={19.2} />
+            <MapboxGL.SymbolLayer id='majorPoints' style={mb_styles.majorPointers} filter={['has', 'name']} minZoomLevel={17} maxZoomLevel={19.2} />
           </MapboxGL.ShapeSource>
 
           <MapboxGL.ShapeSource id="indoorSource" shape={this.state.floorMap} >
@@ -370,7 +370,9 @@ const mb_styles = MapboxGL.StyleSheet.create({
   majorPointers: {
     textField: MapboxGL.StyleSheet.identity('name'),
     textSize: 9,
-    iconImage: 'airport_15'
+    iconImage: 'circle_11',
+    iconSize: 0.5,
+    textOffset: [0,-1]
   }
 
 });
