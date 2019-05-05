@@ -6,13 +6,53 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Sala de Monitorias 1"
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85098277712,
+                        11.01902856328
+                    ],
+                    [
+                        -74.85099433398,
+                        11.01898513276
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "Escaleras I4-S1",
+                "description": "Escaleras que dirigen al primer piso del Bloque I4."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85089268347,
-                    11.01987203595
+                    -74.85086205593,
+                    11.01988288607
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85116240370,
+                        11.01907037326
+                    ],
+                    [
+                        -74.85117396056,
+                        11.01903504545
+                    ]
                 ]
             }
         },
@@ -26,24 +66,24 @@
                 "coordinates": [
                     [
                         [
-                            -74.85086767373,
-                            11.01982471711
+                            -74.85095330792,
+                            11.01974097077
                         ],
                         [
-                            -74.85092376271,
-                            11.01983964591
+                            -74.85097479469,
+                            11.01967167153
                         ],
                         [
-                            -74.85093575331,
-                            11.01979991207
+                            -74.85091791510,
+                            11.01965635943
                         ],
                         [
-                            -74.85087946454,
-                            11.01978520638
+                            -74.85089743873,
+                            11.01972497529
                         ],
                         [
-                            -74.85086767373,
-                            11.01982471711
+                            -74.85095330792,
+                            11.01974097077
                         ]
                     ]
                 ]
@@ -52,13 +92,522 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "I4S-12"
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85092538790,
+                        11.01988101366
+                    ],
+                    [
+                        -74.85091737603,
+                        11.01990835092
+                    ],
+                    [
+                        -74.85088577689,
+                        11.01989990613
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "I4S-13",
+                "description": "Salon de clases."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85091954241,
-                    11.01976432146
+                    -74.85093719256,
+                    11.01970029535
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "LC4",
+                "unitype": "1",
+                "alt_name": "Laboratorio de Maquinas Electricas",
+                "description": "Pertenece al departamento de Ingeniería Eléctrica y Electrónica."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85093093637,
+                    11.01901527484
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85083286818,
+                            11.01895272192
+                        ],
+                        [
+                            -74.85091574735,
+                            11.01897670595
+                        ],
+                        [
+                            -74.85089484998,
+                            11.01904621989
+                        ],
+                        [
+                            -74.85081173070,
+                            11.01902371885
+                        ],
+                        [
+                            -74.85083286818,
+                            11.01895272192
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85118981029,
+                            11.01904930654
+                        ],
+                        [
+                            -74.85123040691,
+                            11.01906031478
+                        ],
+                        [
+                            -74.85120929152,
+                            11.01913357437
+                        ],
+                        [
+                            -74.85116827777,
+                            11.01912197271
+                        ],
+                        [
+                            -74.85118981029,
+                            11.01904930654
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "I4L3",
+                "unitype": "1",
+                "description": "Sala de computadores con software y programas apropiados para la formación en idiomas. Apropiado para la práctica de los estudiantes del Instituto de Idiomas que están en proceso de formación."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85095791231,
+                    11.01962948999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85088602972,
+                            11.01891512534
+                        ],
+                        [
+                            -74.85085928385,
+                            11.01890702263
+                        ],
+                        [
+                            -74.85087348261,
+                            11.01885354505
+                        ],
+                        [
+                            -74.85090088887,
+                            11.01886067544
+                        ],
+                        [
+                            -74.85088602972,
+                            11.01891512534
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "A1C",
+                "description": "Salon de clases."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85079555604,
+                    11.01897962292
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85107226021,
+                        11.01905157498
+                    ],
+                    [
+                        -74.85108414727,
+                        11.01901106143
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85086033911,
+                            11.01984929525
+                        ],
+                        [
+                            -74.85088155582,
+                            11.01985508749
+                        ],
+                        [
+                            -74.85087338401,
+                            11.01988217125
+                        ],
+                        [
+                            -74.85086554852,
+                            11.01990814037
+                        ],
+                        [
+                            -74.85084433682,
+                            11.01990291855
+                        ],
+                        [
+                            -74.85086033911,
+                            11.01984929525
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "Sala de Monitorias 2",
+                "description": "Salon de clases."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85088577689,
+                    11.01989990613
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85112476136,
+                        11.01906065001
+                    ],
+                    [
+                        -74.85113598803,
+                        11.01902499809
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "Dependencia S1 DIEE",
+                "description": "En esta oficina se puede encontrar al encargado de los laboratorios del DIEE en el sotano del Bloque C."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85112476136,
+                    11.01906065001
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85086205593,
+                        11.01988288607
+                    ],
+                    [
+                        -74.85087502754,
+                        11.01983869707
+                    ],
+                    [
+                        -74.85093339978,
+                        11.01985405088
+                    ],
+                    [
+                        -74.85092538790,
+                        11.01988101366
+                    ],
+                    [
+                        -74.85089268347,
+                        11.01987203595
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85094141165,
+                        11.01982334326
+                    ],
+                    [
+                        -74.85095590933,
+                        11.01977503494
+                    ],
+                    [
+                        -74.85091954241,
+                        11.01976432146
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85076253744,
+                            11.01900976597
+                        ],
+                        [
+                            -74.85081173070,
+                            11.01902371885
+                        ],
+                        [
+                            -74.85083286818,
+                            11.01895272192
+                        ],
+                        [
+                            -74.85078393609,
+                            11.01893922203
+                        ],
+                        [
+                            -74.85076253744,
+                            11.01900976597
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "Sala de Monitorias 1",
+                "description": "Salon de clases."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85089268347,
+                    11.01987203595
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "LC1",
+                "unitype": "1",
+                "description": "Espacio idóneo para trabajar en investigaciones de robótica, sistemas inteligentes, producción automática, entre otros.",
+                "alt_name": "Laboratorio de Control y Automatizacion"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85086225562,
+                    11.01899680067
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85094370203,
+                            11.01905844643
+                        ],
+                        [
+                            -74.85099046577,
+                            11.01907167460
+                        ],
+                        [
+                            -74.85101150450,
+                            11.01900198672
+                        ],
+                        [
+                            -74.85096362576,
+                            11.01898999439
+                        ],
+                        [
+                            -74.85094370203,
+                            11.01905844643
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85109634403,
+                            11.01908470719
+                        ],
+                        [
+                            -74.85111320451,
+                            11.01902921150
+                        ],
+                        [
+                            -74.85114622443,
+                            11.01903763864
+                        ],
+                        [
+                            -74.85112975316,
+                            11.01909372005
+                        ],
+                        [
+                            -74.85109634403,
+                            11.01908470719
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85086687836,
+                        11.01894656386
+                    ],
+                    [
+                        -74.85090683206,
+                        11.01895920409
+                    ],
+                    [
+                        -74.85094513479,
+                        11.01896989967
+                    ],
+                    [
+                        -74.85099433398,
+                        11.01898513276
+                    ],
+                    [
+                        -74.85104386337,
+                        11.01899842121
+                    ],
+                    [
+                        -74.85108414727,
+                        11.01901106143
+                    ],
+                    [
+                        -74.85113598803,
+                        11.01902499809
+                    ],
+                    [
+                        -74.85117396056,
+                        11.01903504545
+                    ],
+                    [
+                        -74.85121424446,
+                        11.01904638924
+                    ]
                 ]
             }
         },
@@ -138,13 +687,19 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Escaleras I4-S1"
+                "highway": "footway"
             },
             "geometry": {
-                "type": "Point",
+                "type": "LineString",
                 "coordinates": [
-                    -74.85086205593,
-                    11.01988288607
+                    [
+                        -74.85120301780,
+                        11.01908139294
+                    ],
+                    [
+                        -74.85121424446,
+                        11.01904638924
+                    ]
                 ]
             }
         },
@@ -184,92 +739,16 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Rampa I4-S1"
+                "level": "-1",
+                "name": "LC6",
+                "unitype": "1",
+                "description": "Salon de clases."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85103946174,
-                    11.01973721214
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "footway"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -74.85092538790,
-                        11.01988101366
-                    ],
-                    [
-                        -74.85091737603,
-                        11.01990835092
-                    ],
-                    [
-                        -74.85088577689,
-                        11.01989990613
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "footway"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -74.85091737603,
-                        11.01990835092
-                    ],
-                    [
-                        -74.85098261558,
-                        11.01992445368
-                    ],
-                    [
-                        -74.85103946174,
-                        11.01973721214
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "university"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            -74.85095330792,
-                            11.01974097077
-                        ],
-                        [
-                            -74.85097479469,
-                            11.01967167153
-                        ],
-                        [
-                            -74.85091791510,
-                            11.01965635943
-                        ],
-                        [
-                            -74.85089743873,
-                            11.01972497529
-                        ],
-                        [
-                            -74.85095330792,
-                            11.01974097077
-                        ]
-                    ]
+                    -74.85107226021,
+                    11.01905157498
                 ]
             }
         },
@@ -305,16 +784,164 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -74.85094141165,
-                        11.01982334326
+                        -74.85097689281,
+                        11.01971024934
                     ],
                     [
-                        -74.85095590933,
-                        11.01977503494
+                        -74.85099787630,
+                        11.01964134442
                     ],
                     [
-                        -74.85091954241,
-                        11.01976432146
+                        -74.85095791231,
+                        11.01962948999
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85091574735,
+                            11.01897670595
+                        ],
+                        [
+                            -74.85096362576,
+                            11.01898999439
+                        ],
+                        [
+                            -74.85094370203,
+                            11.01905844643
+                        ],
+                        [
+                            -74.85089484998,
+                            11.01904621989
+                        ],
+                        [
+                            -74.85091574735,
+                            11.01897670595
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "I4S-11",
+                "description": "Salon de clases."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85090342705,
+                    11.01981328260
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "LC3",
+                "unitype": "1",
+                "description": "Es una herramienta tecnológica que apoya los procesos de configuración de diferentes escenarios cotidianos que se pueden presentar en una empresa en torno a las redes de computadores.",
+                "alt_name": "Laboratorio de Redes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85102933475,
+                    11.01904023118
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85105575075,
+                            11.01901365462
+                        ],
+                        [
+                            -74.85110065739,
+                            11.01902597074
+                        ],
+                        [
+                            -74.85108332574,
+                            11.01908119521
+                        ],
+                        [
+                            -74.85107849843,
+                            11.01909657662
+                        ],
+                        [
+                            -74.85103526758,
+                            11.01908434780
+                        ],
+                        [
+                            -74.85105575075,
+                            11.01901365462
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "Rampa I4-S1",
+                "description": "Rampa que dirige al primer piso del Bloque I4."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85103946174,
+                    11.01973721214
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85089131286,
+                        11.01886715729
+                    ],
+                    [
+                        -74.85088569953,
+                        11.01888368682
+                    ],
+                    [
+                        -74.85086687836,
+                        11.01894656386
+                    ],
+                    [
+                        -74.85080909407,
+                        11.01893100666
+                    ],
+                    [
+                        -74.85079555604,
+                        11.01897962292
                     ]
                 ]
             }
@@ -328,30 +955,13 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -74.85095590933,
-                        11.01977503494
+                        -74.85094513479,
+                        11.01896989967
                     ],
                     [
-                        -74.85097689281,
-                        11.01971024934
-                    ],
-                    [
-                        -74.85093719256,
-                        11.01970029535
+                        -74.85093093637,
+                        11.01901527484
                     ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "I4S-11"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85090342705,
-                    11.01981328260
                 ]
             }
         },
@@ -424,6 +1034,220 @@
         {
             "type": "Feature",
             "properties": {
+                "level": "-1",
+                "name": "LC5",
+                "unitype": "1",
+                "description": "Salon de clases."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85120301780,
+                    11.01908139294
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85095590933,
+                        11.01977503494
+                    ],
+                    [
+                        -74.85097689281,
+                        11.01971024934
+                    ],
+                    [
+                        -74.85093719256,
+                        11.01970029535
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85101150450,
+                            11.01900198672
+                        ],
+                        [
+                            -74.85105575075,
+                            11.01901365462
+                        ],
+                        [
+                            -74.85103526758,
+                            11.01908434780
+                        ],
+                        [
+                            -74.85099046577,
+                            11.01907167460
+                        ],
+                        [
+                            -74.85101150450,
+                            11.01900198672
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "A2C",
+                "description": "Salon de clases."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85098277712,
+                    11.01902856328
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "level": "-1",
+                "name": "Escaleras S1C",
+                "description": "Escaleras que dirigen al primer piso del Bloque C."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85089131286,
+                    11.01886715729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85112504691,
+                            11.01910974389
+                        ],
+                        [
+                            -74.85112975316,
+                            11.01909372005
+                        ],
+                        [
+                            -74.85114622443,
+                            11.01903763864
+                        ],
+                        [
+                            -74.85118981029,
+                            11.01904930654
+                        ],
+                        [
+                            -74.85116827777,
+                            11.01912197271
+                        ],
+                        [
+                            -74.85112504691,
+                            11.01910974389
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85090683206,
+                        11.01895920409
+                    ],
+                    [
+                        -74.85089428462,
+                        11.01900457927
+                    ],
+                    [
+                        -74.85086225562,
+                        11.01899680067
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "footway"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.85102933475,
+                        11.01904023118
+                    ],
+                    [
+                        -74.85104386337,
+                        11.01899842121
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85086767373,
+                            11.01982471711
+                        ],
+                        [
+                            -74.85092376271,
+                            11.01983964591
+                        ],
+                        [
+                            -74.85093575331,
+                            11.01979991207
+                        ],
+                        [
+                            -74.85087946454,
+                            11.01978520638
+                        ],
+                        [
+                            -74.85086767373,
+                            11.01982471711
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
                 "building": "university"
             },
             "geometry": {
@@ -457,26 +1281,31 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "I4L3"
+                "level": "-1",
+                "name": "I4S-12",
+                "description": "Salon de clases."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85095791231,
-                    11.01962948999
+                    -74.85091954241,
+                    11.01976432146
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "I4S-13"
+                "level": "-1",
+                "name": "LC2",
+                "unitype": "1",
+                "description": "Salon de clases."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85093719256,
-                    11.01970029535
+                    -74.85116240370,
+                    11.01907037326
                 ]
             }
         },
@@ -489,47 +1318,16 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -74.85086205593,
-                        11.01988288607
+                        -74.85091737603,
+                        11.01990835092
                     ],
                     [
-                        -74.85087502754,
-                        11.01983869707
+                        -74.85098261558,
+                        11.01992445368
                     ],
                     [
-                        -74.85093339978,
-                        11.01985405088
-                    ],
-                    [
-                        -74.85092538790,
-                        11.01988101366
-                    ],
-                    [
-                        -74.85089268347,
-                        11.01987203595
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "footway"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -74.85097689281,
-                        11.01971024934
-                    ],
-                    [
-                        -74.85099787630,
-                        11.01964134442
-                    ],
-                    [
-                        -74.85095791231,
-                        11.01962948999
+                        -74.85103946174,
+                        11.01973721214
                     ]
                 ]
             }
@@ -544,28 +1342,68 @@
                 "coordinates": [
                     [
                         [
-                            -74.85086033911,
-                            11.01984929525
+                            -74.85120929152,
+                            11.01913357437
                         ],
                         [
-                            -74.85088155582,
-                            11.01985508749
+                            -74.85116827777,
+                            11.01912197271
                         ],
                         [
-                            -74.85087338401,
-                            11.01988217125
+                            -74.85112504691,
+                            11.01910974389
                         ],
                         [
-                            -74.85086554852,
-                            11.01990814037
+                            -74.85107849843,
+                            11.01909657662
                         ],
                         [
-                            -74.85084433682,
-                            11.01990291855
+                            -74.85103526758,
+                            11.01908434780
                         ],
                         [
-                            -74.85086033911,
-                            11.01984929525
+                            -74.85099046577,
+                            11.01907167460
+                        ],
+                        [
+                            -74.85094370203,
+                            11.01905844643
+                        ],
+                        [
+                            -74.85089484998,
+                            11.01904621989
+                        ],
+                        [
+                            -74.85081173070,
+                            11.01902371885
+                        ],
+                        [
+                            -74.85076253744,
+                            11.01900976597
+                        ],
+                        [
+                            -74.85078393609,
+                            11.01893922203
+                        ],
+                        [
+                            -74.85079753755,
+                            11.01889438273
+                        ],
+                        [
+                            -74.85111422426,
+                            11.01898224102
+                        ],
+                        [
+                            -74.85124264131,
+                            11.01901786771
+                        ],
+                        [
+                            -74.85123040691,
+                            11.01906031478
+                        ],
+                        [
+                            -74.85120929152,
+                            11.01913357437
                         ]
                     ]
                 ]
@@ -574,13 +1412,90 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Sala de Monitorias 2"
+                "building": "university"
             },
             "geometry": {
-                "type": "Point",
+                "type": "Polygon",
                 "coordinates": [
-                    -74.85088577689,
-                    11.01989990613
+                    [
+                        [
+                            -74.85110065739,
+                            11.01902597074
+                        ],
+                        [
+                            -74.85111422426,
+                            11.01898224102
+                        ],
+                        [
+                            -74.85124264131,
+                            11.01901786771
+                        ],
+                        [
+                            -74.85123040691,
+                            11.01906031478
+                        ],
+                        [
+                            -74.85120929152,
+                            11.01913357437
+                        ],
+                        [
+                            -74.85116827777,
+                            11.01912197271
+                        ],
+                        [
+                            -74.85112504691,
+                            11.01910974389
+                        ],
+                        [
+                            -74.85107849843,
+                            11.01909657662
+                        ],
+                        [
+                            -74.85108332574,
+                            11.01908119521
+                        ],
+                        [
+                            -74.85110065739,
+                            11.01902597074
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85112504691,
+                            11.01910974389
+                        ],
+                        [
+                            -74.85112975316,
+                            11.01909372005
+                        ],
+                        [
+                            -74.85109634403,
+                            11.01908470719
+                        ],
+                        [
+                            -74.85108332574,
+                            11.01908119521
+                        ],
+                        [
+                            -74.85107849843,
+                            11.01909657662
+                        ],
+                        [
+                            -74.85112504691,
+                            11.01910974389
+                        ]
+                    ]
                 ]
             }
         }

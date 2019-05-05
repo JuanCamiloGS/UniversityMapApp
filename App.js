@@ -52,7 +52,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     Laboratorios:{
       screen: props => <HomeScreen {...props} slot={1} />
     },
-    Departamentos:{
+    Bloques:{
       screen: props => <HomeScreen {...props} slot={2} />
     },
     Canchas:{

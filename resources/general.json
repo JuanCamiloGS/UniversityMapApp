@@ -6,52 +6,74 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Parqueadero Bloque G"
+                "name": "Bloque L5",
+                "unitype": "2",
+                "alt_name": "Bloque de Pedagogia"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.84948527764,
-                    11.02016731128
+                    -74.85202075946,
+                    11.01813052214
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque de Salud"
+                "name": "Parqueadero Administrativo Principal",
+                "unitype": "4",
+                "description": "Zona de parqueo destinada especialmente para funcionaros y docentes de la Universidad. Tiene espacio reservado para personas discapacitadas."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85193671542,
-                    11.01893651877
+                    -74.85095933552,
+                    11.01760118896
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque C"
+                "name": "Bloque L1",
+                "unitype": "2"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85095254129,
-                    11.01900580021
+                    -74.85062716449,
+                    11.01845291402
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque I1"
+                "name": "Bloque I4",
+                "unitype": "2",
+                "description": "Ofrece una alternativa diferente, con calidad y proyección internacional para el aprendizaje de distintos idiomas, incluso español para estudiantes internacionales.",
+                "alt_name": "Instituto de Idiomas (I4)"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85060107219,
-                    11.01964229522
+                    -74.85099014303,
+                    11.01974398376
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque Administrativo II",
+                "unitype": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85201615507,
+                    11.01855836924
                 ]
             }
         },
@@ -71,39 +93,43 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque K"
+                "name": "Bloque de Ciencias Basicas",
+                "unitype": "2"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85117662307,
-                    11.02021853209
+                    -74.85102928264,
+                    11.02074881759
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Cancha de Baloncesto"
+                "name": "Cancha de Tenis",
+                "unitype": "3",
+                "description": "Tiene un área de 695.4 m2 con recubrimiento de plexipave para partidos de sencillos y dobles. Cuenta con todas las medidas internacionales reglamentarias."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.84997948049,
-                    11.02035260854
+                    -74.85005161591,
+                    11.02011156947
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque Administrativo II"
+                "name": "Le Salon",
+                "unitype": "5"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85201615507,
-                    11.01855836924
+                    -74.85024611104,
+                    11.01946416554
                 ]
             }
         },
@@ -143,184 +169,135 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Biblioteca Karl C. Parrish"
+                "name": "Bloque D",
+                "unitype": "2",
+                "description": "Bloque integrado por oficinas administrativas, salones de clases y oficinas de algunos departamentos académicos."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85022504942,
-                    11.01788345673
+                    -74.85012068328,
+                    11.01820283588
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque L1"
+                "name": "Coliseo Los Fundadores",
+                "unitype": "3",
+                "description": "En su interior se encuentra una cancha central de basquetbol o voleibol, además ahí se encuentra el gimnasio y un salón de danza."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85062716449,
-                    11.01845291402
+                    -74.85036317954,
+                    11.02034356958
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Laboratorio de Arquitectura Tropical"
+                "name": "DuNord Café",
+                "unitype": "5",
+                "description": "Café du Nord es una cafetería gourmet ubicada en el corazón de la Universidad del Norte. Encuentra un exquisito menú de carnes, aves, pastas y pescados además de servicios tecnológicas de vanguardia: MEDIATECA, INTERNET Y SALA DE SIMULACION"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.84670641483,
-                    11.02025628798
+                    -74.85028030208,
+                    11.01956471286
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque I2"
+                "name": "Bloque I3",
+                "unitype": "2",
+                "description": "Ofrece una alternativa diferente, con calidad y proyección internacional para el aprendizaje de distintos idiomas, incluso español para estudiantes internacionales.",
+                "alt_name": "Instituto de Idiomas (I2)"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85075455181,
-                    11.01983964628
+                    -74.85086659194,
+                    11.01952177542
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque L"
+                "name": "Cancha Multiple",
+                "unitype": "3"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85160943561,
-                    11.01929354317
+                    -74.84736418927,
+                    11.01950143995
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque M"
+                "name": "Bloque J",
+                "unitype": "2",
+                "description": "Sede de oficinas de Gestión y Desarrollo Académico, Comunicaciones y Relaciones Públicas, Jurídica, Egresados, Mercadeo, Departamento de Matemáticas y la Decanatura de la División de Ciencias Básicas."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.84837408365,
-                    11.01959936080
+                    -74.85164473439,
+                    11.01897416370
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque Administrativo I (Casa Blanca)"
+                "name": "Bloque K",
+                "unitype": "2",
+                "description": "Tipo de construcción pionera en una universidad colombiana. Destinado principalmente para laboratorios de ingenierías y humanidades, aulas de estudio, salas y aulas magistrales.",
+                "alt_name": "Edificio de Ingenierias"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85120731900,
-                    11.01812449763
+                    -74.85117662307,
+                    11.02021853209
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Parqueadero Bloque C"
+                "name": "Parqueadero Bloque G",
+                "unitype": "4",
+                "description": "Zona de parqueo para estudiantes, visitantes y eventos realizados en la Institución."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85121424545,
-                    11.01920487914
+                    -74.84948527764,
+                    11.02016731128
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque E"
+                "name": "Laboratorio de Energias Renovables",
+                "unitype": "1"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85004547673,
-                    11.01848605709
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque F"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.84997948049,
-                    11.01869696746
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "university"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            -74.85093872736,
-                            11.01959032106
-                        ],
-                        [
-                            -74.85084414497,
-                            11.01990310686
-                        ],
-                        [
-                            -74.85099489059,
-                            11.01994025126
-                        ],
-                        [
-                            -74.85111954487,
-                            11.01952375204
-                        ],
-                        [
-                            -74.85103369220,
-                            11.01950153119
-                        ],
-                        [
-                            -74.85100067039,
-                            11.01960522088
-                        ],
-                        [
-                            -74.85093872736,
-                            11.01959032106
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque L3"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85047675446,
-                    11.01898470921
+                    -74.84657961960,
+                    11.02015775943
                 ]
             }
         },
@@ -368,234 +345,29 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque G"
+                "name": "Bloque de Salud",
+                "unitype": "2"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.84971856667,
-                    11.01972440156
+                    -74.85193671542,
+                    11.01893651877
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque L5"
+                "name": "Parqueadero Coliseo",
+                "unitype": "4",
+                "description": "Zona de parqueo destinada especialmente para funcionarios y docentes de la Universidad."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85202075946,
-                    11.01813052214
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Le Salon"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85024611104,
-                    11.01946416554
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Parqueadero 9"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.84890972753,
-                    11.02009499803
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque A"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85109067295,
-                    11.01848304409
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Parqueadero Bloque J"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85149029055,
-                    11.01854758838
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque L2"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85055195948,
-                    11.01871353898
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque I3"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85086659194,
-                    11.01952177542
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque de Ciencias Basicas"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85102928264,
-                    11.02074881759
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "DuNord Terrase"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85048596324,
-                    11.02019743967
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque J"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85164473439,
-                    11.01897416370
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "DuNord Graphique"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85016026010,
-                    11.01891188523
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "DuNord Plaza"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.84996346334,
-                    11.01889762446
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque B"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85100779396,
-                    11.01876476004
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Laboratorio de Energias Renovables"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.84657961960,
-                    11.02015775943
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Canchas de Raquetball"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85070390584,
-                    11.02004679170
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Parqueadero 10"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.84585701938,
-                    11.01956169987
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Puerta 7"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.84960192216,
-                    11.01920616621
+                    -74.85022233825,
+                    11.02070225626
                 ]
             }
         },
@@ -635,117 +407,119 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Restaurante 1966"
+                "building": "university"
             },
             "geometry": {
-                "type": "Point",
+                "type": "Polygon",
                 "coordinates": [
-                    -74.84981025243,
-                    11.01882891345
+                    [
+                        [
+                            -74.85065479006,
+                            11.01898018895
+                        ],
+                        [
+                            -74.85120961851,
+                            11.01913272172
+                        ],
+                        [
+                            -74.85124223293,
+                            11.01901822771
+                        ],
+                        [
+                            -74.85068759575,
+                            11.01886494107
+                        ],
+                        [
+                            -74.85065479006,
+                            11.01898018895
+                        ]
+                    ]
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Cancha de Tenis"
+                "name": "Bloque L2",
+                "unitype": "2"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85005161591,
-                    11.02011156947
+                    -74.85055195948,
+                    11.01871353898
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "DuNord Café"
+                "name": "DuNord Terrase",
+                "unitype": "5"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85028030208,
-                    11.01956471286
+                    -74.85048596324,
+                    11.02019743967
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque M"
+                "name": "Parqueadero 10",
+                "unitype": "4"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.84850454132,
-                    11.01974549101
+                    -74.84585701938,
+                    11.01956169987
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque D"
+                "name": "Bloque G",
+                "unitype": "2",
+                "alt_name": "Edificio de Postgrados"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85012068328,
-                    11.01820283588
+                    -74.84971856667,
+                    11.01972440156
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "Parqueadero Coliseo"
+                "name": "DuNord Plaza",
+                "unitype": "5"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85022233825,
-                    11.02070225626
+                    -74.84996346334,
+                    11.01889762446
                 ]
             }
         },
         {
             "type": "Feature",
             "properties": {
-                "name": "DuNord Express"
+                "name": "Bloque A",
+                "unitype": "2",
+                "description": "Bloque integrado por oficinas administrativas y de profesores"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85042969996,
-                    11.01917506119
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque I4"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85099014303,
-                    11.01974398376
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "El Camion"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85069776665,
-                    11.02065240212
+                    -74.85109067295,
+                    11.01848304409
                 ]
             }
         },
@@ -765,13 +539,370 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque M"
+                "building": "university"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -74.85093872736,
+                            11.01959032106
+                        ],
+                        [
+                            -74.85084414497,
+                            11.01990310686
+                        ],
+                        [
+                            -74.85099489059,
+                            11.01994025126
+                        ],
+                        [
+                            -74.85111954487,
+                            11.01952375204
+                        ],
+                        [
+                            -74.85103369220,
+                            11.01950153119
+                        ],
+                        [
+                            -74.85100067039,
+                            11.01960522088
+                        ],
+                        [
+                            -74.85093872736,
+                            11.01959032106
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque E",
+                "unitype": "2",
+                "description": "Bloque integrado en su mayoría por salones de clase."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.84835566609,
-                    11.01972590655
+                    -74.85004547673,
+                    11.01848605709
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque I1",
+                "unitype": "2",
+                "description": "Ofrece una alternativa diferente, con calidad y proyección internacional para el aprendizaje de distintos idiomas, incluso español para estudiantes internacionales.",
+                "alt_name": "Instituto de Idiomas (I1)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85060107219,
+                    11.01964229522
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque L",
+                "unitype": "2",
+                "description": "El edificio lleva el nombre en homenaje a Julio Muvdi Abufhele, miembro fundador y primer rector de la Universidad. Tiene un área de 4.500 m2 en total, con capacidad para albergar unos 800 estudiantes.",
+                "alt_name": "Edificio Julio Muvdi"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85160943561,
+                    11.01929354317
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque M",
+                "unitype": "2",
+                "description": "El pregrado en Música busca lograr altos parámetros de formación profesional bajo la guía de expertos de alto nivel. Se orienta a la formación de músicos profesionales con énfasis en interpretación de instrumentos.",
+                "alt_name": "Bloque de Musica"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84843321901,
+                    11.01968326235
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque L3",
+                "unitype": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85047675446,
+                    11.01898470921
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Puerta 7"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84960192216,
+                    11.01920616621
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "DuNord Express",
+                "unitype": "5",
+                "description": "Ahorra tiempo y ven a disfrutar de esta terraza al aire libre con las más deliciosas opciones en comida rápida: perros, sándwiches, hamburguesas, chuzos y picadas."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85042969996,
+                    11.01917506119
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Laboratorio de Arquitectura Tropical",
+                "unitype": "1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84670641483,
+                    11.02025628798
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Parqueadero 9",
+                "unitype": "4",
+                "description": "Zona de parqueo para estudiantes, visitantes y eventos realizados en la Institución.",
+                "alt_name": "Parqueadero Zona Deportiva"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84890972753,
+                    11.02009499803
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Parqueadero Bloque J",
+                "unitype": "4",
+                "description": "Zona de parqueo destinada especialmente para funcionarios y docentes de la Universidad."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85149029055,
+                    11.01854758838
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque C",
+                "unitype": "2",
+                "description": "Bloque integrado en su mayoría por salones de clase y oficinas de profesores algunos departamentos académicos."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85095254129,
+                    11.01900580021
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Canchas de Raquetball",
+                "unitype": "3",
+                "description": "Son tres canchas con un área total de 334 m2. Están dotadas de maderamen de arce duro con especificaciones profesionales internacionales. Cuentan también con pasarelas de juez, graderías y aire acondicionado central."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85070390584,
+                    11.02004679170
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque B",
+                "unitype": "2",
+                "description": "Bloque integrado por oficinas administrativas y de profesores"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85100779396,
+                    11.01876476004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "El Camion",
+                "unitype": "5"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85069776665,
+                    11.02065240212
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "description": "Aporta elementos para que los miembros de la comunidad estudiantil participen en espacios de desarrollo de las dimensiones: física, cultural, psico-afectiva, socio-comunicativa, intelectual, política y axiológica.",
+                "name": "Bienestar Universitario",
+                "unitype": "6"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85024960462,
+                    11.02006185514
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque F",
+                "unitype": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84997948049,
+                    11.01869696746
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque Administrativo I",
+                "unitype": "2",
+                "description": "Es la sede principal de la administración universitaria. Se encuentra Rectoría, Vicerrectoría Académica, Vicerrectoría Administrativa, Secretaría Académica, Secretaría General, entre otras.",
+                "alt_name": "Casa Blanca"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85120731900,
+                    11.01812449763
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cancha de Baloncesto",
+                "unitype": "3",
+                "description": "La cancha central (de 22 m. por 38 m.) posee un sistema de iluminación especial para competencias de baloncesto, fútbol de salón y voleibol, eventos, competencias deportivas profesionales y recreación."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84997948049,
+                    11.02035260854
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Parqueadero Bloque C",
+                "unitype": "4",
+                "description": "Zona de parqueo destinada especialmente para funcionarios y docentes de la Universidad."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85121424545,
+                    11.01920487914
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cancha de Futbol",
+                "unitype": "3"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.84809059609,
+                    11.02012145944
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Biblioteca Karl C. Parrish",
+                "unitype": "2",
+                "description": "Ofrece recursos y servicios de información especializados de alta calidad, con las mejores tecnologías disponibles para satisfacer las necesidades de información para la formación específica e integral ."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85022504942,
+                    11.01788345673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bloque I2",
+                "unitype": "2",
+                "description": "Ofrece una alternativa diferente, con calidad y proyección internacional para el aprendizaje de distintos idiomas, incluso español para estudiantes internacionales.",
+                "alt_name": "Instituto de Idiomas (I3)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.85075455181,
+                    11.01983964628
                 ]
             }
         },
@@ -791,39 +922,15 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Parqueadero Administrativo Principal"
+                "name": "DuNord Graphique",
+                "unitype": "5",
+                "description": "Centro de diseño, publicidad y fotocopiado, donde el estudiante puede realizar trabajos de diseño e impresión con equipos, tecnología y herramientas necesarias para la elaboración de productos gráficos de calidad."
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.85095933552,
-                    11.01760118896
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Coliseo Los Fundadores"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85036317954,
-                    11.02034356958
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "Bloque J"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.85171686981,
-                    11.01870148696
+                    -74.85016026010,
+                    11.01891188523
                 ]
             }
         }
