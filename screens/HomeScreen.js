@@ -69,9 +69,9 @@ class Home extends Component<{}> {
   async componentWillMount () {
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow.bind(this));
     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide.bind(this));
-    //const isGranted = await MapboxGL.requestAndroidLocationPermissions();
+    const isGranted = await MapboxGL.requestAndroidLocationPermissions();
     this.setState({
-      isPermissionGranted: false//isGranted
+      isPermissionGranted: isGranted
     });
   }
 
@@ -146,7 +146,7 @@ class Home extends Component<{}> {
     })
   }
 
-  getRouteData(){
+  getRouteDataTest(){
     fetch('http://159.89.22.204:8002/route', {
       method: 'POST', 
       body: JSON.stringify(
@@ -191,7 +191,55 @@ class Home extends Component<{}> {
       .catch((error) => {
         console.error(error);
       });
-    
+  }
+
+  getRouteData(){
+    const obj = this.state.pointCurrent;
+    if (this.state.isPermissionGranted) {
+      Geolocation.getCurrentPosition(
+          (position) => {
+              console.log(position);
+          },
+          (error) => {
+              // See error code charts below.
+              console.log(error.code, error.message);
+          },
+          { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+      );
+
+      fetch('http://159.89.22.204:8002/route', {
+      method: 'POST', 
+      body: JSON.stringify(
+        {
+          "locations": [
+            {
+              "lat": dummy['coords']['latitude'],
+              "lon": dummy['coords']['longitude'],
+              "type": "break"
+            },
+            {
+              "lat": obj['geometry']['coordinates'][1],
+              "lon": obj['geometry']['coordinates'][0],
+              "type": "break"
+            },
+          ],
+          "costing":"pedestrian",
+          "directions_options":{"units":"metres"}
+        }
+      )})
+      //'{"locations":[{"lat":11.019573,"lon":-74.849811,"type":"break"},{"lat":11.019805,"lon":-74.850563,"type":"break"}],"costing":"pedestrian","directions_options":{"units":"metres"}}'})
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6)
+        })
+
+        
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    }
   }
 
   // Funciones de Componentes
@@ -326,9 +374,14 @@ class Home extends Component<{}> {
         <ScrollView style={styles.floatingMenu}>
           
           <View style={styles.menuContent}>
-            <Text style={{fontWeight: 'bold'}}>{this.state.pointCurrent['properties']['name'] || ""} (Piso: {this.state.pointCurrent['properties']['level'] || 'N/A'})</Text>
+            <Text style={{fontWeight: 'bold'}}>{this.state.pointCurrent['properties']['name'] || ""}</Text>
             {/* <Text style={{fontSize: 11}}>Piso: {this.state.pointCurrent['properties']['level']}</Text> */}
-            <Text style={{fontSize: 11, paddingBottom:2}}>Otros nombres: {this.state.pointCurrent['properties']['alt_name'] || 'N/A'}</Text>
+            <Text style={{fontSize: 11, paddingBottom:2}}>Piso: {this.state.pointCurrent['properties']['level'] || 'N/A'} | Otros nombres: {this.state.pointCurrent['properties']['alt_name'] || 'N/A'}</Text>
+            
+            <TouchableOpacity style={styles.routeButton} onPress={getRouteData}>
+              <Text style={{fontSize: 10, textAlign: 'center'}}> TRAZAR RUTA </Text>
+            </TouchableOpacity>
+
             <Text>{this.state.pointCurrent['properties']['description']}</Text>
           </View>
           <TouchableOpacity style={styles.closeButton} onPress={closeVis}>
@@ -415,6 +468,13 @@ const styles = StyleSheet.create({
       borderRadius: 3,
       backgroundColor: '#fca9a9',
     },
+    routeButton:{
+      elevation: 1,
+      borderRadius: 3,
+      backgroundColor: '#a4c2f2',
+      marginVertical: 5,
+      width: width/4
+    },
     menuContent: {
       paddingVertical: 14,
       paddingHorizontal: 10,
@@ -433,7 +493,7 @@ const styles = StyleSheet.create({
     floorButton: {
       backgroundColor: '#eaedf2',
       borderRadius: 3,
-      marginVertical: 2
+      marginVertical: 2,
     },
     autocompleteContainer: {
       borderWidth: 0
