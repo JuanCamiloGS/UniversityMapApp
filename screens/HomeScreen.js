@@ -2,37 +2,29 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity, ScrollView, TextInput, Keyboard} from 'react-native';
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
 //import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
-import {Labs, Deps, Canchas, Parqs} from '../resources/floors.js'
+//import {Labs, Deps, Canchas, Parqs} from '../resources/floors.js'
+//import {General, Floors, POI} from '../resources/floors.js'
 import {Header, Icon, Left, Button} from 'native-base'
 import ShapeSource from '@mapbox/react-native-mapbox-gl/javascript/components/ShapeSource';
-import {General, Floors, POI} from '../resources/floors.js'
 import Autocomplete from 'react-native-autocomplete-input';
 var polyline = require('@mapbox/polyline');
+import Geolocation from 'react-native-geolocation-service';
 
-MapboxGL.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
+//MapboxGL.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
+MapboxGL.setAccessToken('pk.Not needed')
 
+var dummy = {
+  "coords": {
+    "longitude": -74.849811,
+    "latitude": 11.019573
+  }
+}
 
 class Home extends Component<{}> {
 
   constructor (props) {
     super(props)
-    this.state = {
-      hidden: true,
-      hidden2: false,
-      pointCurrent: {
-        "type": "Point",
-        "coordinates": [0,0
-        ]
-      },
-      floorMap: Floors[1].map,
-      currentFloor: 1,
-      route: {
-        "type": "LineString",
-        "coordinates": [
-        ]
-      },
-      query: ''
-    }
+
     OptionSelect = this.OptionSelect;
     MapboxPoint = this.MapboxPoint;
     showMenu = this.showMenu.bind(this);
@@ -42,13 +34,45 @@ class Home extends Component<{}> {
     FloorButton = this.FloorButton.bind(this);
     getRouteData = this.getRouteData.bind(this);
     selectedLocation = this.selectedLocation.bind(this);
+
+    Labs = this.props.specific[0];
+    Deps = this.props.specific[1];
+    Canchas = this.props.specific[2];
+    Parqs = this.props.specific[3];
+
+    General = this.props.wide[0];
+    Floors = this.props.wide[1];
+    POI = this.props.wide[2];
+
+    this.state = {
+      isPermissionGranted: false,
+      hidden: true,
+      hidden2: false,
+      pointCurrent: {
+        "type": "Point",
+        "coordinates": [0,0],
+        "hidden": true,
+        "properties": {}
+      },
+      floorMap: Floors[1].map,
+      currentFloor: 1,
+      route: {
+        "type": "LineString",
+        "coordinates": []
+      },
+      query: ''
+    }
   }
 
   // Keyboard Control
 
-  componentWillMount () {
+  async componentWillMount () {
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow.bind(this));
     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide.bind(this));
+    //const isGranted = await MapboxGL.requestAndroidLocationPermissions();
+    this.setState({
+      isPermissionGranted: false//isGranted
+    });
   }
 
   componentWillUnmount () {
@@ -66,7 +90,7 @@ class Home extends Component<{}> {
   _keyboardDidHide () {
     this.setState({
       hidden2: false,
-      hidden: false,
+      hidden: this.state.pointCurrent['hidden'] || false , // Could be better
       query: ''
     })
   }
@@ -92,14 +116,14 @@ class Home extends Component<{}> {
       pointCurrent: {
         "type": "Point",
         "coordinates": [0,0
-        ]
+        ],
+        "properties": {}
       }
     });
 
   }
 
   findData(query) {
-
     if (query === '') {
       return [];
     }
@@ -123,12 +147,46 @@ class Home extends Component<{}> {
   }
 
   getRouteData(){
-    fetch('http://159.89.22.204:8002/route', {method: 'POST', body: '{"locations":[{"lat":11.019573,"lon":-74.849811,"type":"break"},{"lat":11.019805,"lon":-74.850563,"type":"break"}],"costing":"pedestrian","directions_options":{"units":"metres"}}'})
+    fetch('http://159.89.22.204:8002/route', {
+      method: 'POST', 
+      body: JSON.stringify(
+        {
+          "locations": [
+            {
+              "lat": 11.019573,
+              "lon": -74.849811,
+              "type": "break"
+            },
+            {
+              "lat": 11.019805,
+              "lon": -74.850563,
+              "type": "break"
+            },
+          ],
+          "costing":"pedestrian",
+          "directions_options":{"units":"metres"}
+        }
+      )})
+      //'{"locations":[{"lat":11.019573,"lon":-74.849811,"type":"break"},{"lat":11.019805,"lon":-74.850563,"type":"break"}],"costing":"pedestrian","directions_options":{"units":"metres"}}'})
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
           route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6)
         })
+
+        if (this.state.isPermissionGranted) {
+            Geolocation.getCurrentPosition(
+                (position) => {
+                    console.log(position);
+                },
+                (error) => {
+                    // See error code charts below.
+                    console.log(error.code, error.message);
+                },
+                { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+            );
+        }
+
       })
       .catch((error) => {
         console.error(error);
@@ -158,8 +216,8 @@ class Home extends Component<{}> {
     return  <MapboxGL.PointAnnotation
               id={'P'+obj['properties']['name']}
               coordinate={[obj['geometry']['coordinates'][0], obj['geometry']['coordinates'][1]]}>
-              <TouchableOpacity style={styles.annotationContainer} onPress={() => showMenu(obj)}>
-                <View style={styles.annotationFill}  />
+              <TouchableOpacity style={styles.annotationFill} onPress={() => showMenu(obj)}>
+                {/* <View style={styles.annotationFill}  /> */}
               </TouchableOpacity>
             </MapboxGL.PointAnnotation>;
   }
@@ -210,7 +268,8 @@ class Home extends Component<{}> {
                         centerCoordinate={[-74.8503,11.0191]} 
                         style={styles.container}
                         minZoomLevel={16}
-                        compassEnabled={false}>
+                        compassEnabled={false}
+                        showUserLocation={this.state.isPermissionGranted}>
           {this.renderAnnotations()}
           <MapboxGL.ShapeSource id='outdoorSource' shape={General}>
             <MapboxGL.SymbolLayer id='majorPoints_iconsOnly' style={mb_styles.onlyIcons} filter={['has', 'name']} minZoomLevel={16.1} maxZoomLevel={17} />
@@ -267,7 +326,7 @@ class Home extends Component<{}> {
         <ScrollView style={styles.floatingMenu}>
           
           <View style={styles.menuContent}>
-            <Text style={{fontWeight: 'bold'}}>{this.state.pointCurrent['properties']['name']} (Piso: {this.state.pointCurrent['properties']['level'] || 'N/A'})</Text>
+            <Text style={{fontWeight: 'bold'}}>{this.state.pointCurrent['properties']['name'] || ""} (Piso: {this.state.pointCurrent['properties']['level'] || 'N/A'})</Text>
             {/* <Text style={{fontSize: 11}}>Piso: {this.state.pointCurrent['properties']['level']}</Text> */}
             <Text style={{fontSize: 11, paddingBottom:2}}>Otros nombres: {this.state.pointCurrent['properties']['alt_name'] || 'N/A'}</Text>
             <Text>{this.state.pointCurrent['properties']['description']}</Text>
@@ -318,10 +377,12 @@ const styles = StyleSheet.create({
       borderRadius: 6,
     },
     annotationFill: {
-      width: 10,
-      height: 10,
+      width: 13,
+      height: 13,
       borderRadius: 6,
       backgroundColor: 'red',
+      borderWidth: 2,
+      borderColor: 'white',
       transform: [{ scale: 0.6 }],
     },
     floatingInput: {
@@ -362,7 +423,7 @@ const styles = StyleSheet.create({
       position: 'absolute',
       backgroundColor: 'white',
       height: height/5,
-      width: width/20,
+      width: width/18,
       bottom: height/2-height/10,
       right: 5,
       borderRadius: 6,

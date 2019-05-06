@@ -12,6 +12,8 @@ import com.facebook.soloader.SoLoader;
 
 import com.mapbox.rctmgl.RCTMGLPackage;
 
+import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,8 +29,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new VectorIconsPackage(),
-          new RCTMGLPackage()
+          new VectorIconsPackage(),
+          new RCTMGLPackage(),
+          new RNFusedLocationPackage()
       );
     }
 

@@ -12,6 +12,12 @@ import {createDrawerNavigator, DrawerItems} from 'react-navigation';
 import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
+import {Labs, Deps, Canchas, Parqs} from './resources/floors.js'
+import {General, Floors, POI} from './resources/floors.js'
+
+var Wide = [General, Floors, POI];
+var Specific = [Labs, Deps, Canchas, Parqs];
+
 type Props = {};
 export default class App extends Component<Props> {
   render() {
@@ -47,19 +53,19 @@ const CustomDrawerComponent = (props) => (
 
 const AppDrawerNavigator = createDrawerNavigator({
     Tú:{
-      screen: props => <HomeScreen {...props} slot={0} />
+      screen: props => <HomeScreen {...props} slot={0} wide={Wide} specific={Specific}/>
     },
     Laboratorios:{
-      screen: props => <HomeScreen {...props} slot={1} />
+      screen: props => <HomeScreen {...props} slot={1} wide={Wide} specific={Specific}/>
     },
     Bloques:{
-      screen: props => <HomeScreen {...props} slot={2} />
+      screen: props => <HomeScreen {...props} slot={2} wide={Wide} specific={Specific}/>
     },
     Canchas:{
-      screen: props => <HomeScreen {...props} slot={3} />
+      screen: props => <HomeScreen {...props} slot={3} wide={Wide} specific={Specific}/>
     },
     Parqueaderos:{
-      screen: props => <HomeScreen {...props} slot={4} />
+      screen: props => <HomeScreen {...props} slot={4} wide={Wide} specific={Specific}/>
     }
   },{
     contentComponent: CustomDrawerComponent
