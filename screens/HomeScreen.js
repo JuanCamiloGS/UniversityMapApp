@@ -306,11 +306,18 @@ class Home extends Component<{}> {
     }else{
       return <View style={styles.routeDescContainer}>
         <Text style={{fontWeight: 'bold',textAlign: 'center'}}>GUIA</Text>
-        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text>Tiempo: {this.state.legs['summary']['time']} s</Text>
-          <Text>Distancia: {this.state.legs['summary']['length']} m</Text>
+        <Text style={{fontWeight: 'bold',fontSize: 10}}>Aproximaciones:</Text>
+        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4}}>
+          <Text style={{fontSize: 12}}>Tiempo: {this.state.legs['summary']['time']} s</Text>
+          <Text style={{fontSize: 12}}>Distancia: {this.state.legs['summary']['length']} m</Text>
         </View>
-        {this.state.legs['maneuvers'].map((leg, i) => <Text key={'I'+i}>{leg['instruction']}</Text>)}
+        <Text style={{fontWeight: 'bold',fontSize: 10}}>Indicaciones:</Text>
+
+        <View key='I0' style={styles.routeStep}><Text style={{flex:8, fontSize: 12}}>Ubicate en el punto de partida de la ruta</Text><Text style={{flex:2, fontSize: 12}}> - </Text></View>
+        {this.state.legs['maneuvers'].map((leg, i) => <View key={'I'+i} style={styles.routeStep}>
+              <Text style={{flex:8, fontSize: 12}}>{leg['instruction']}</Text><Text style={{flex:2, fontSize: 12}}>{leg['length']*1000} m</Text>
+            </View>)}
+        {this.state.pointCurrent['properties']['indoor']=='yes'? <View key='IF' style={styles.routeStep}><Text style={{flex:8, fontSize: 12}}>Sigue la ruta interna del edificio hasta tu destino</Text><Text style={{flex:2, fontSize: 12}}> - </Text></View> : <View/>}
       </View>
     }
     
@@ -532,6 +539,13 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       marginVertical: 5,
       padding: 4
+    },
+    routeStep: {
+      borderTopWidth:1, 
+      borderStyle:'dashed',
+      flex: 1, 
+      flexDirection: 'row', 
+      justifyContent: 'space-between',
     }
 })
 
