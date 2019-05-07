@@ -33,6 +33,10 @@ for (i = 0; i < Floors.length; i++) {
 } 
 POI = POI.concat(General['features'].filter(floor => floor['geometry']['type'] == 'Point'));
 
+var Outdoors = [];
+//Cambiar General a POI cuando termine de probar
+Outdoors = Outdoors.concat(General['features'].filter(point => point['properties']['indoor'] == "no"));
+
 var Labs = [];
 Labs = Labs.concat(POI.filter(point => point['properties']['unitype'] == "1"));
 
@@ -45,16 +49,19 @@ Canchas = Canchas.concat(POI.filter(point => point['properties']['unitype'] == "
 var Parqs = [];
 Parqs = Parqs.concat(POI.filter(point => point['properties']['unitype'] == "4"));
 
+//Esto puede mejorarse:
+
 Repeat = POI.filter(point => point['properties'].hasOwnProperty("alt_name"));
 Repeat.forEach(function(orig){
     entry = JSON.parse(JSON.stringify(orig));
     [entry['properties']['name'], entry['properties']['alt_name']] = [entry['properties']['alt_name'], entry['properties']['name']];
     POI.push(entry);
 });
-//POI = POI.concat(Repeat);
 
+//
 
 export {POI};
+export {Outdoors};
 export {Labs};
 export {Deps};
 export {Canchas};

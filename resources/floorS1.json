@@ -27,7 +27,9 @@
             "properties": {
                 "level": "-1",
                 "name": "Escaleras I4-S1",
-                "description": "Escaleras que dirigen al primer piso del Bloque I4."
+                "description": "Escaleras que dirigen al primer piso del Bloque I4.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -117,7 +119,9 @@
             "properties": {
                 "level": "-1",
                 "name": "I4S-13",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -134,7 +138,9 @@
                 "name": "LC4",
                 "unitype": "1",
                 "alt_name": "Laboratorio de Maquinas Electricas",
-                "description": "Pertenece al departamento de Ingeniería Eléctrica y Electrónica."
+                "description": "Pertenece al departamento de Ingeniería Eléctrica y Electrónica.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -216,7 +222,9 @@
                 "level": "-1",
                 "name": "I4L3",
                 "unitype": "1",
-                "description": "Sala de computadores con software y programas apropiados para la formación en idiomas. Apropiado para la práctica de los estudiantes del Instituto de Idiomas que están en proceso de formación."
+                "description": "Sala de computadores con software y programas apropiados para la formación en idiomas. Apropiado para la práctica de los estudiantes del Instituto de Idiomas que están en proceso de formación.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -264,7 +272,9 @@
             "properties": {
                 "level": "-1",
                 "name": "A1C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -335,7 +345,9 @@
             "properties": {
                 "level": "-1",
                 "name": "Sala de Monitorias 2",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -369,7 +381,9 @@
             "properties": {
                 "level": "-1",
                 "name": "Dependencia S1 DIEE",
-                "description": "En esta oficina se puede encontrar al encargado de los laboratorios del DIEE en el sotano del Bloque C."
+                "description": "En esta oficina se puede encontrar al encargado de los laboratorios del DIEE en el sotano del Bloque C.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -471,7 +485,9 @@
             "properties": {
                 "level": "-1",
                 "name": "Sala de Monitorias 1",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -488,7 +504,9 @@
                 "name": "LC1",
                 "unitype": "1",
                 "description": "Espacio idóneo para trabajar en investigaciones de robótica, sistemas inteligentes, producción automática, entre otros.",
-                "alt_name": "Laboratorio de Control y Automatizacion"
+                "alt_name": "Laboratorio de Control y Automatizacion",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -742,7 +760,9 @@
                 "level": "-1",
                 "name": "LC6",
                 "unitype": "1",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -836,7 +856,9 @@
             "properties": {
                 "level": "-1",
                 "name": "I4S-11",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -853,7 +875,9 @@
                 "name": "LC3",
                 "unitype": "1",
                 "description": "Es una herramienta tecnológica que apoya los procesos de configuración de diferentes escenarios cotidianos que se pueden presentar en una empresa en torno a las redes de computadores.",
-                "alt_name": "Laboratorio de Redes"
+                "alt_name": "Laboratorio de Redes",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -905,7 +929,9 @@
             "properties": {
                 "level": "-1",
                 "name": "Rampa I4-S1",
-                "description": "Rampa que dirige al primer piso del Bloque I4."
+                "description": "Rampa que dirige al primer piso del Bloque I4.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -1037,7 +1063,9 @@
                 "level": "-1",
                 "name": "LC5",
                 "unitype": "1",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -1108,7 +1136,9 @@
             "properties": {
                 "level": "-1",
                 "name": "A2C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -1123,7 +1153,9 @@
             "properties": {
                 "level": "-1",
                 "name": "Escaleras S1C",
-                "description": "Escaleras que dirigen al primer piso del Bloque C."
+                "description": "Escaleras que dirigen al primer piso del Bloque C.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -1283,7 +1315,9 @@
             "properties": {
                 "level": "-1",
                 "name": "I4S-12",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I4"
             },
             "geometry": {
                 "type": "Point",
@@ -1299,7 +1333,9 @@
                 "level": "-1",
                 "name": "LC2",
                 "unitype": "1",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",

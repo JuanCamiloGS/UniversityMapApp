@@ -41,7 +41,9 @@
             "properties": {
                 "level": "2",
                 "name": "I223",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I2"
             },
             "geometry": {
                 "type": "Point",
@@ -155,7 +157,9 @@
             "properties": {
                 "level": "2",
                 "name": "I426",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -205,7 +209,9 @@
             "properties": {
                 "level": "2",
                 "name": "I127",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -277,7 +283,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-22",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -311,7 +319,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-17",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -519,7 +529,9 @@
             "properties": {
                 "level": "2",
                 "name": "I322",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I3"
             },
             "geometry": {
                 "type": "Point",
@@ -567,7 +579,9 @@
             "properties": {
                 "level": "2",
                 "name": "Sala de Estudio I1",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -738,7 +752,9 @@
             "properties": {
                 "level": "2",
                 "name": "26C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -786,7 +802,9 @@
             "properties": {
                 "level": "2",
                 "name": "I221",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I2"
             },
             "geometry": {
                 "type": "Point",
@@ -820,7 +838,9 @@
             "properties": {
                 "level": "2",
                 "name": "21C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -991,7 +1011,9 @@
             "properties": {
                 "level": "2",
                 "name": "I222",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I2"
             },
             "geometry": {
                 "type": "Point",
@@ -1025,7 +1047,9 @@
             "properties": {
                 "level": "2",
                 "name": "I421",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -1125,7 +1149,9 @@
             "properties": {
                 "level": "2",
                 "name": "I126",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -1159,7 +1185,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-19",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -1226,7 +1254,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-18",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -1260,7 +1290,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-13",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -1518,7 +1550,9 @@
             "properties": {
                 "level": "2",
                 "name": "I123",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -1585,7 +1619,9 @@
             "properties": {
                 "level": "2",
                 "name": "Baño Mujeres I4",
-                "description": "Baño de mujeres."
+                "description": "Baño de mujeres.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -1675,7 +1711,9 @@
             "properties": {
                 "level": "2",
                 "name": "23C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -1742,7 +1780,9 @@
             "properties": {
                 "level": "2",
                 "name": "I1 SACOI",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -1757,7 +1797,9 @@
             "properties": {
                 "level": "2",
                 "name": "22C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -1805,7 +1847,9 @@
             "properties": {
                 "level": "2",
                 "name": "I225",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I2"
             },
             "geometry": {
                 "type": "Point",
@@ -1872,7 +1916,9 @@
             "properties": {
                 "level": "2",
                 "name": "Via Norte",
-                "unitype": "5"
+                "unitype": "5",
+                "indoor": "yes",
+                "isin": "Bloque I2"
             },
             "geometry": {
                 "type": "Point",
@@ -1920,7 +1966,9 @@
             "properties": {
                 "level": "2",
                 "name": "I425",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -2152,7 +2200,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-20",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -2167,7 +2217,9 @@
             "properties": {
                 "level": "2",
                 "name": "Escaleras I2-2",
-                "description": "Escaleras que llevan al primer piso del Bloque I2."
+                "description": "Escaleras que llevan al primer piso del Bloque I2.",
+                "indoor": "yes",
+                "isin": "Bloque I2"
             },
             "geometry": {
                 "type": "Point",
@@ -2182,7 +2234,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-15",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -2282,7 +2336,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-14",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -2457,7 +2513,9 @@
             "properties": {
                 "level": "2",
                 "name": "I321",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I3"
             },
             "geometry": {
                 "type": "Point",
@@ -2557,7 +2615,9 @@
             "properties": {
                 "level": "2",
                 "name": "I428",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -2643,7 +2703,9 @@
             "properties": {
                 "level": "2",
                 "name": "24C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -2691,7 +2753,9 @@
             "properties": {
                 "level": "2",
                 "name": "Escaleras I4-2",
-                "description": "Escaleras que llevan al primer piso del Bloque I4."
+                "description": "Escaleras que llevan al primer piso del Bloque I4.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -2725,7 +2789,9 @@
             "properties": {
                 "level": "2",
                 "name": "Baño Mujeres C",
-                "description": "Baño de mujeres."
+                "description": "Baño de mujeres.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -2792,7 +2858,9 @@
             "properties": {
                 "level": "2",
                 "name": "I224",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I2"
             },
             "geometry": {
                 "type": "Point",
@@ -2807,7 +2875,9 @@
             "properties": {
                 "level": "2",
                 "name": "Division de Derecho, Ciencias Politicas y Relaciones Internacionales",
-                "description": "Oficinas de profesores."
+                "description": "Oficinas de profesores.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -2822,7 +2892,9 @@
             "properties": {
                 "level": "2",
                 "name": "I423",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -2936,7 +3008,9 @@
             "properties": {
                 "level": "2",
                 "name": "I424",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -2970,7 +3044,9 @@
             "properties": {
                 "level": "2",
                 "name": "I125",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3037,7 +3113,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-16",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3071,7 +3149,9 @@
             "properties": {
                 "level": "2",
                 "name": "Rampa I4-2",
-                "description": "Rampa que llevan al primer piso del Bloque I4."
+                "description": "Rampa que llevan al primer piso del Bloque I4.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -3086,7 +3166,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-11",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3271,7 +3353,8 @@
             "properties": {
                 "level": "2",
                 "name": "Escaleras I3-2",
-                "description": "Escaleras que llevan al primer piso del Bloque I3."
+                "description": "Escaleras que llevan al primer piso del Bloque I3.",
+                "isin": "Bloque I3"
             },
             "geometry": {
                 "type": "Point",
@@ -3319,7 +3402,9 @@
             "properties": {
                 "level": "2",
                 "name": "I122",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3520,7 +3605,9 @@
             "properties": {
                 "level": "2",
                 "name": "Baño Hombres C",
-                "description": "Baño de hombres."
+                "description": "Baño de hombres.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -3568,7 +3655,9 @@
             "properties": {
                 "level": "2",
                 "name": "I121",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3672,7 +3761,9 @@
             "properties": {
                 "level": "2",
                 "name": "I422",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -3720,7 +3811,9 @@
             "properties": {
                 "level": "2",
                 "name": "I427",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -3814,7 +3907,9 @@
             "properties": {
                 "level": "2",
                 "name": "I124",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3828,7 +3923,9 @@
             "type": "Feature",
             "properties": {
                 "level": "2",
-                "name": "Escaleras I1-2"
+                "name": "Escaleras I1-2",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3843,7 +3940,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-21",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -3963,7 +4062,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-12",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -4135,7 +4236,9 @@
             "properties": {
                 "level": "2",
                 "name": "I323",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I3"
             },
             "geometry": {
                 "type": "Point",
@@ -4235,7 +4338,9 @@
             "properties": {
                 "level": "2",
                 "name": "I324",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque I3"
             },
             "geometry": {
                 "type": "Point",
@@ -4250,7 +4355,9 @@
             "properties": {
                 "level": "2",
                 "name": "Baño Hombres I4",
-                "description": "Baño de hombres."
+                "description": "Baño de hombres.",
+                "isin": "Bloque I4",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -4322,7 +4429,9 @@
             "properties": {
                 "level": "2",
                 "name": "Escaleras 2C",
-                "description": "Escaleras que llevan al primer piso del Bloque B."
+                "description": "Escaleras que llevan al primer piso del Bloque B.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -4389,7 +4498,9 @@
             "properties": {
                 "level": "2",
                 "name": "25C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "indoor": "yes",
+                "isin": "Bloque C"
             },
             "geometry": {
                 "type": "Point",
@@ -4484,7 +4595,9 @@
             "properties": {
                 "level": "2",
                 "name": "I12-10",
-                "description": "Oficina de profesor."
+                "description": "Oficina de profesor.",
+                "indoor": "yes",
+                "isin": "Bloque I1"
             },
             "geometry": {
                 "type": "Point",
@@ -4499,7 +4612,9 @@
             "properties": {
                 "level": "2",
                 "name": "Escaleras 2B",
-                "description": "Escaleras que llevan al tercer piso del Bloque C."
+                "description": "Escaleras que llevan al tercer piso del Bloque C.",
+                "indoor": "yes",
+                "isin": "Bloque B"
             },
             "geometry": {
                 "type": "Point",

@@ -9,6 +9,8 @@ import ShapeSource from '@mapbox/react-native-mapbox-gl/javascript/components/Sh
 import Autocomplete from 'react-native-autocomplete-input';
 var polyline = require('@mapbox/polyline');
 import Geolocation from 'react-native-geolocation-service';
+import ImageIcon from '../resources/icon.png'
+import StarIcon from '../resources/star.png'
 
 //MapboxGL.setAccessToken('pk.eyJ1IjoianVhbmNhbWlsb2dzIiwiYSI6ImNqczFtZTAzNTF2dm80NHBkcjNtZnV4d28ifQ.O1btLai2y5Q0YR0PBWRV-w');
 MapboxGL.setAccessToken('pk.Not needed')
@@ -43,6 +45,7 @@ class Home extends Component<{}> {
     General = this.props.wide[0];
     Floors = this.props.wide[1];
     POI = this.props.wide[2];
+    Outdoors = this.props.wide[3];
 
     this.state = {
       isPermissionGranted: false,
@@ -62,6 +65,8 @@ class Home extends Component<{}> {
       },
       query: ''
     }
+
+    this.onSourceLayerPress = this.onSourceLayerPress.bind(this);
   }
 
   // Keyboard Control
@@ -146,55 +151,20 @@ class Home extends Component<{}> {
     })
   }
 
-  getRouteDataTest(){
-    fetch('http://159.89.22.204:8002/route', {
-      method: 'POST', 
-      body: JSON.stringify(
-        {
-          "locations": [
-            {
-              "lat": 11.019573,
-              "lon": -74.849811,
-              "type": "break"
-            },
-            {
-              "lat": 11.019805,
-              "lon": -74.850563,
-              "type": "break"
-            },
-          ],
-          "costing":"pedestrian",
-          "directions_options":{"units":"metres"}
-        }
-      )})
-      //'{"locations":[{"lat":11.019573,"lon":-74.849811,"type":"break"},{"lat":11.019805,"lon":-74.850563,"type":"break"}],"costing":"pedestrian","directions_options":{"units":"metres"}}'})
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({
-          route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6)
-        })
-
-        if (this.state.isPermissionGranted) {
-            Geolocation.getCurrentPosition(
-                (position) => {
-                    console.log(position);
-                },
-                (error) => {
-                    // See error code charts below.
-                    console.log(error.code, error.message);
-                },
-                { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-            );
-        }
-
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-
   getRouteData(){
     const obj = this.state.pointCurrent;
+    var destiny = {};
+    if(obj['properties']['indoor'] == 'no'){
+      coords = obj['properties']['roadPoint'].split(',').map(Number);
+      destiny['latitude'] = coords[0];
+      destiny['longitude'] = coords[1];
+    }else{
+      outdoorPoint = Outdoors.filter(point => point['properties']['name'] == obj['properties']['isin'])[0];
+      //console.log(Outdoors);
+      coords = outdoorPoint['properties']['roadPoint'].split(',').map(Number);
+      destiny['latitude'] = coords[0];
+      destiny['longitude'] = coords[1];
+    }
     if (this.state.isPermissionGranted) {
       Geolocation.getCurrentPosition(
           (position) => {
@@ -218,8 +188,8 @@ class Home extends Component<{}> {
               "type": "break"
             },
             {
-              "lat": obj['geometry']['coordinates'][1],
-              "lon": obj['geometry']['coordinates'][0],
+              "lat": destiny['latitude'],
+              "lon": destiny['longitude'],
               "type": "break"
             },
           ],
@@ -233,7 +203,7 @@ class Home extends Component<{}> {
         this.setState({
           route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6)
         })
-
+        console.log(responseJson);
         
       })
       .catch((error) => {
@@ -264,13 +234,13 @@ class Home extends Component<{}> {
     return  <MapboxGL.PointAnnotation
               id={'P'+obj['properties']['name']}
               coordinate={[obj['geometry']['coordinates'][0], obj['geometry']['coordinates'][1]]}>
-              <TouchableOpacity style={styles.annotationFill} onPress={() => showMenu(obj)}>
+              <TouchableOpacity style={styles.annotationFill} onPress={this.showMenu.bind(this,obj)}>
                 {/* <View style={styles.annotationFill}  /> */}
               </TouchableOpacity>
             </MapboxGL.PointAnnotation>;
   }
 
-  OptionSelect(props) {
+  OptionSelect2(props) {
     const option = props.slotChoice;
     switch(option) {
       case 0:
@@ -293,15 +263,72 @@ class Home extends Component<{}> {
     }
   }
 
+  OptionSelect(option) {
+    //const option = props.slotChoice;
+    console.log(option);
+    switch(option) {
+      case 0:
+        return {
+                "type": "FeatureCollection",
+                "generator": "JOSM",
+                "features": []
+               };
+        break;
+      case 1:
+        return {
+                "type": "FeatureCollection",
+                "generator": "JOSM",
+                "features": Labs
+                };
+        break;
+      case 2:
+        return {
+                "type": "FeatureCollection",
+                "generator": "JOSM",
+                "features": Deps
+                };
+        break;
+      case 3:
+        return {
+                "type": "FeatureCollection",
+                "generator": "JOSM",
+                "features": Canchas
+                };
+        break;
+      case 4:
+        return {
+                "type": "FeatureCollection",
+                "generator": "JOSM",
+                "features": Parqs
+                };
+        break;
+      default:
+        return {
+                "type": "FeatureCollection",
+                "generator": "JOSM",
+                "features": []
+               };
+    }
+  }
+
   renderAnnotations () {
     return (
       <OptionSelect slotChoice={this.props.slot}/>
     )
   }
 
+  onSourceLayerPress(e) {
+    const feature = e.nativeEvent.payload;
+    console.log('You pressed a layer here is your feature', feature); // eslint-disable-line
+    showMenu(feature);
+  }
+
   // Render
 
   render() {
+    const slot = this.props.slot;
+    const annotations = OptionSelect(slot);
+
     const query = this.state.query;
     const data = this.findData(query);
     const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
@@ -318,7 +345,9 @@ class Home extends Component<{}> {
                         minZoomLevel={16}
                         compassEnabled={false}
                         showUserLocation={this.state.isPermissionGranted}>
-          {this.renderAnnotations()}
+          {/* {this.renderAnnotations()} */}
+          
+
           <MapboxGL.ShapeSource id='outdoorSource' shape={General}>
             <MapboxGL.SymbolLayer id='majorPoints_iconsOnly' style={mb_styles.onlyIcons} filter={['has', 'name']} minZoomLevel={16.1} maxZoomLevel={17} />
             <MapboxGL.SymbolLayer id='majorPoints' style={mb_styles.majorPointers} filter={['has', 'name']} minZoomLevel={17} maxZoomLevel={18.5} />
@@ -337,6 +366,10 @@ class Home extends Component<{}> {
 
           <MapboxGL.ShapeSource id='routeSource' shape={this.state.route}>
             <MapboxGL.LineLayer id='routeLayer' style={{lineColor:'red'}} />
+          </MapboxGL.ShapeSource>
+
+          <MapboxGL.ShapeSource id='selectionMarkers' shape={annotations} onPress={this.onSourceLayerPress}>
+            <MapboxGL.SymbolLayer id='markerLayer' style={mb_styles.markerIcon} />
           </MapboxGL.ShapeSource>
         </MapboxGL.MapView>
 
@@ -530,8 +563,15 @@ const mb_styles = MapboxGL.StyleSheet.create({
     iconSize: 0.4
   },
   destinyIcon: {
-    iconImage: 'star_11',
-    iconSize: 1,
+    iconImage: StarIcon,
+    iconSize: 0.4
+  },
+  markerIcon: {
+    iconImage: ImageIcon,
+    iconSize: MapboxGL.StyleSheet.camera({
+      16: 0.12,
+      18: 0.22
+    }, MapboxGL.InterpolationMode.Exponential),
   }
 
 });

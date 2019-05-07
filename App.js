@@ -13,9 +13,9 @@ import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
 import {Labs, Deps, Canchas, Parqs} from './resources/floors.js'
-import {General, Floors, POI} from './resources/floors.js'
+import {General, Floors, POI, Outdoors} from './resources/floors.js'
 
-var Wide = [General, Floors, POI];
+var Wide = [General, Floors, POI, Outdoors];
 var Specific = [Labs, Deps, Canchas, Parqs];
 
 type Props = {};

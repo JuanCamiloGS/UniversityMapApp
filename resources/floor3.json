@@ -8,7 +8,9 @@
             "properties": {
                 "level": "3",
                 "name": "34C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -193,7 +195,9 @@
             "properties": {
                 "level": "3",
                 "name": "33C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -274,7 +278,9 @@
             "properties": {
                 "level": "3",
                 "name": "31C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -289,7 +295,9 @@
             "properties": {
                 "level": "3",
                 "name": "38C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -416,7 +424,9 @@
             "properties": {
                 "level": "3",
                 "name": "37C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -483,7 +493,9 @@
             "properties": {
                 "level": "3",
                 "name": "32C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -498,7 +510,9 @@
             "properties": {
                 "level": "3",
                 "name": "35C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -513,7 +527,9 @@
             "properties": {
                 "level": "3",
                 "name": "Escaleras 3C",
-                "description": "Escaleras que llevan al segundo piso del Bloque B."
+                "description": "Escaleras que llevan al segundo piso del Bloque B.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -599,7 +615,9 @@
             "properties": {
                 "level": "3",
                 "name": "Oficinas de Profesores 3C",
-                "description": "Oficinas de profesores."
+                "description": "Oficinas de profesores.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
@@ -718,7 +736,9 @@
             "properties": {
                 "level": "3",
                 "name": "36C",
-                "description": "Salon de clases."
+                "description": "Salon de clases.",
+                "isin": "Bloque C",
+                "indoor": "yes"
             },
             "geometry": {
                 "type": "Point",
