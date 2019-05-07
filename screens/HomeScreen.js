@@ -36,6 +36,7 @@ class Home extends Component<{}> {
     FloorButton = this.FloorButton.bind(this);
     getRouteData = this.getRouteData.bind(this);
     selectedLocation = this.selectedLocation.bind(this);
+    RouteDescription = this.RouteDescription.bind(this);
 
     Labs = this.props.specific[0];
     Deps = this.props.specific[1];
@@ -61,8 +62,10 @@ class Home extends Component<{}> {
       currentFloor: 1,
       route: {
         "type": "LineString",
-        "coordinates": []
+        "coordinates": [],
+        "hidden": true
       },
+      legs: [],
       query: ''
     }
 
@@ -120,10 +123,16 @@ class Home extends Component<{}> {
       hidden: true,
       pointCurrent: {
         "type": "Point",
-        "coordinates": [0,0
-        ],
+        "coordinates": [0,0],
+        "hidden": true,
         "properties": {}
-      }
+      },
+      route: {
+        "type": "LineString",
+        "coordinates": [],
+        "hidden": true
+      },
+      legs: []
     });
 
   }
@@ -137,7 +146,15 @@ class Home extends Component<{}> {
   }
 
   selectedLocation(obj){
-    this.setState({ query: obj['properties']['name']}); 
+    this.setState({ 
+      query: obj['properties']['name'],
+      route: {
+        "type": "LineString",
+        "coordinates": [],
+        "hidden": true
+      },
+      legs: []
+    }); 
     showMenu(obj);
     Keyboard.dismiss();
   }
@@ -194,14 +211,14 @@ class Home extends Component<{}> {
             },
           ],
           "costing":"pedestrian",
-          "directions_options":{"units":"metres"}
+          "directions_options":{"units":"metres","language":"es-ES"}
         }
       )})
-      //'{"locations":[{"lat":11.019573,"lon":-74.849811,"type":"break"},{"lat":11.019805,"lon":-74.850563,"type":"break"}],"costing":"pedestrian","directions_options":{"units":"metres"}}'})
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
-          route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6)
+          route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6),
+          legs: responseJson['trip']['legs'][0]
         })
         console.log(responseJson);
         
@@ -229,42 +246,7 @@ class Home extends Component<{}> {
            </TouchableOpacity>
   }
 
-  MapboxPoint(props){
-    const obj = props.obj;
-    return  <MapboxGL.PointAnnotation
-              id={'P'+obj['properties']['name']}
-              coordinate={[obj['geometry']['coordinates'][0], obj['geometry']['coordinates'][1]]}>
-              <TouchableOpacity style={styles.annotationFill} onPress={this.showMenu.bind(this,obj)}>
-                {/* <View style={styles.annotationFill}  /> */}
-              </TouchableOpacity>
-            </MapboxGL.PointAnnotation>;
-  }
-
-  OptionSelect2(props) {
-    const option = props.slotChoice;
-    switch(option) {
-      case 0:
-        return <View></View>;
-        break;
-      case 1:
-        return <View>{Labs.map((lab, i) => <MapboxPoint obj={lab} key={i} />)}</View>;
-        break;
-      case 2:
-        return <View>{Deps.map((dep, i) => <MapboxPoint obj={dep} key={i} />)}</View>;
-        break;
-      case 3:
-        return <View>{Canchas.map((can, i) => <MapboxPoint obj={can} key={i} />)}</View>;
-        break;
-      case 4:
-        return <View>{Parqs.map((par, i) => <MapboxPoint obj={par} key={i} />)}</View>;
-        break;
-      default:
-        return <View></View>;
-    }
-  }
-
   OptionSelect(option) {
-    //const option = props.slotChoice;
     console.log(option);
     switch(option) {
       case 0:
@@ -311,16 +293,27 @@ class Home extends Component<{}> {
     }
   }
 
-  renderAnnotations () {
-    return (
-      <OptionSelect slotChoice={this.props.slot}/>
-    )
-  }
-
   onSourceLayerPress(e) {
     const feature = e.nativeEvent.payload;
     console.log('You pressed a layer here is your feature', feature); // eslint-disable-line
     showMenu(feature);
+  }
+
+  RouteDescription(){
+    const sw = this.state.route['hidden'] || false;
+    if(sw){
+      return <View></View>
+    }else{
+      return <View style={styles.routeDescContainer}>
+        <Text style={{fontWeight: 'bold',textAlign: 'center'}}>GUIA</Text>
+        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text>Tiempo: {this.state.legs['summary']['time']} s</Text>
+          <Text>Distancia: {this.state.legs['summary']['length']} m</Text>
+        </View>
+        {this.state.legs['maneuvers'].map((leg, i) => <Text key={'I'+i}>{leg['instruction']}</Text>)}
+      </View>
+    }
+    
   }
 
   // Render
@@ -345,8 +338,6 @@ class Home extends Component<{}> {
                         minZoomLevel={16}
                         compassEnabled={false}
                         showUserLocation={this.state.isPermissionGranted}>
-          {/* {this.renderAnnotations()} */}
-          
 
           <MapboxGL.ShapeSource id='outdoorSource' shape={General}>
             <MapboxGL.SymbolLayer id='majorPoints_iconsOnly' style={mb_styles.onlyIcons} filter={['has', 'name']} minZoomLevel={16.1} maxZoomLevel={17} />
@@ -414,7 +405,7 @@ class Home extends Component<{}> {
             <TouchableOpacity style={styles.routeButton} onPress={getRouteData}>
               <Text style={{fontSize: 10, textAlign: 'center'}}> TRAZAR RUTA </Text>
             </TouchableOpacity>
-
+            <RouteDescription/>
             <Text>{this.state.pointCurrent['properties']['description']}</Text>
           </View>
           <TouchableOpacity style={styles.closeButton} onPress={closeVis}>
@@ -533,6 +524,14 @@ const styles = StyleSheet.create({
     },
     itemText: {
       margin: 2
+    },
+    routeDescContainer:{
+      backgroundColor: '#e8e3b7',
+      borderRadius: 3,
+      flex: 1,
+      flexDirection: 'column',
+      marginVertical: 5,
+      padding: 4
     }
 })
 

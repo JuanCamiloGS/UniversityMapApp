@@ -236,7 +236,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque I3",
+                "name": "Bloque I2",
                 "unitype": "2",
                 "description": "Ofrece una alternativa diferente, con calidad y proyección internacional para el aprendizaje de distintos idiomas, incluso español para estudiantes internacionales.",
                 "alt_name": "Instituto de Idiomas (I2)",
@@ -980,7 +980,7 @@
         {
             "type": "Feature",
             "properties": {
-                "name": "Bloque I2",
+                "name": "Bloque I3",
                 "unitype": "2",
                 "description": "Ofrece una alternativa diferente, con calidad y proyección internacional para el aprendizaje de distintos idiomas, incluso español para estudiantes internacionales.",
                 "alt_name": "Instituto de Idiomas (I3)",
