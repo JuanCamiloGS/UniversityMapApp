@@ -37,6 +37,7 @@ class Home extends Component<{}> {
     getRouteData = this.getRouteData.bind(this);
     selectedLocation = this.selectedLocation.bind(this);
     RouteDescription = this.RouteDescription.bind(this);
+    dataFetcher = this.dataFetcher.bind(this);
 
     Labs = this.props.specific[0];
     Deps = this.props.specific[1];
@@ -168,6 +169,45 @@ class Home extends Component<{}> {
     })
   }
 
+  dataFetcher(position,destiny){
+    fetch('http://159.89.22.204:8002/route', {
+      method: 'POST', 
+      body: JSON.stringify(
+        {
+          "locations": [
+            {
+              "lat": position['coords']['latitude'],
+              "lon": position['coords']['longitude'],
+              "type": "break"
+            },
+            {
+              "lat": destiny['latitude'],
+              "lon": destiny['longitude'],
+              "type": "break"
+            },
+          ],
+          "costing":"pedestrian",
+          "directions_options":{"units":"metres","language":"es-ES"}
+        }
+      )})
+      .then((response) => response.json())
+      .then((responseJson) => {
+        if(!responseJson.hasOwnProperty("error")){
+          this.setState({
+            route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6),
+            legs: responseJson['trip']['legs'][0]
+          })
+          Alert.alert(JSON.stringify(responseJson));
+        }else{
+          Alert.alert("No se encontró ruta");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        Alert.alert('Error de fetch: '+error)
+      })
+  }
+
   getRouteData(){
     const obj = this.state.pointCurrent;
     var destiny = {};
@@ -186,46 +226,21 @@ class Home extends Component<{}> {
       Geolocation.getCurrentPosition(
           (position) => {
               console.log(position);
+              dataFetcher(position, destiny);
           },
           (error) => {
               // See error code charts below.
-              console.log(error.code, error.message);
+              //console.log(error.code, error.message);
+              //Alert.alert("Error de localización: "+ error.message)
+              navigator.geolocation.getCurrentPosition(
+                (position) => {dataFetcher(position, destiny)}, 
+                (error) => {Alert.alert("No se pudo obtener localización")}, 
+                {enableHighAccuracy: true, timeout: 20000, maximumAge: 80000});
           },
           { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
       );
-
-      fetch('http://159.89.22.204:8002/route', {
-      method: 'POST', 
-      body: JSON.stringify(
-        {
-          "locations": [
-            {
-              "lat": dummy['coords']['latitude'],
-              "lon": dummy['coords']['longitude'],
-              "type": "break"
-            },
-            {
-              "lat": destiny['latitude'],
-              "lon": destiny['longitude'],
-              "type": "break"
-            },
-          ],
-          "costing":"pedestrian",
-          "directions_options":{"units":"metres","language":"es-ES"}
-        }
-      )})
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({
-          route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6),
-          legs: responseJson['trip']['legs'][0]
-        })
-        console.log(responseJson);
-        
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    }else{
+      Alert.alert("Se requieren permisos para acceder a la localización de usuario")
     }
   }
 
@@ -309,7 +324,7 @@ class Home extends Component<{}> {
         <Text style={{fontWeight: 'bold',fontSize: 10}}>Aproximaciones:</Text>
         <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4}}>
           <Text style={{fontSize: 12}}>Tiempo: {this.state.legs['summary']['time']} s</Text>
-          <Text style={{fontSize: 12}}>Distancia: {this.state.legs['summary']['length']} m</Text>
+          <Text style={{fontSize: 12}}>Distancia: {this.state.legs['summary']['length']*1000} m</Text>
         </View>
         <Text style={{fontWeight: 'bold',fontSize: 10}}>Indicaciones:</Text>
 
@@ -373,7 +388,7 @@ class Home extends Component<{}> {
 
 
         {/* Floating Input Object */}
-        {this.props.slot==0 &&
+        {//this.props.slot==0 &&
         <View style={styles.floatingInput}>
           <TouchableOpacity style={{flex: 1, alignItems: 'center'}} onPress={() => this.props.navigation.openDrawer()}>
             <Icon name='menu' />
@@ -577,13 +592,13 @@ const mb_styles = MapboxGL.StyleSheet.create({
   },
   destinyIcon: {
     iconImage: StarIcon,
-    iconSize: 0.4
+    iconSize: 0.3
   },
   markerIcon: {
     iconImage: ImageIcon,
     iconSize: MapboxGL.StyleSheet.camera({
-      16: 0.12,
-      18: 0.22
+      16: 0.1,
+      18: 0.15
     }, MapboxGL.InterpolationMode.Exponential),
   }
 
