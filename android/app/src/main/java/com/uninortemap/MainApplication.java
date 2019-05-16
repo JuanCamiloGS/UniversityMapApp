@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.uninortemap;
 
 import android.app.Application;
 
@@ -9,8 +9,6 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-
-import com.mapbox.rctmgl.RCTMGLPackage;
 
 import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 

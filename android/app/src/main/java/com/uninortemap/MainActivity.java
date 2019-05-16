@@ -1,4 +1,4 @@
-package com.helloworld;
+package com.uninortemap;
 
 import com.facebook.react.ReactActivity;
 
