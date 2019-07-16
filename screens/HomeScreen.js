@@ -156,7 +156,8 @@ class Home extends Component<{}> {
 
   selectedLocation(obj){
     this.setState({ 
-      query: obj['properties']['name'],
+      //query: obj['properties']['name'],
+      query: '',
       route: {
         "type": "LineString",
         "coordinates": [],
@@ -170,7 +171,8 @@ class Home extends Component<{}> {
 
   selectedOrigin(obj){
     this.setState({ 
-      oriquer: obj['properties']['name'],
+      //oriquer: obj['properties']['name'],
+      oriquer: '',
       pointOrig: obj,
       route: {
         "type": "LineString",
@@ -390,11 +392,13 @@ class Home extends Component<{}> {
     const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
     const query = this.state.query;
     const data = this.findData(query);
-    const rows = data.length === 1 && comp(query, data[0]['properties']['name']) ? [] : data.slice(0,5);
+    //const rows = data.length === 1 && comp(query, data[0]['properties']['name']) ? [] : data.slice(0,5);
+    const rows = data.slice(0,5);
 
     const oriquer = this.state.oriquer;
     const data2 = this.findData(oriquer);
-    var rows2 = data2.length === 1 && comp(oriquer, data2[0]['properties']['name']) ? [] : data2.slice(0,4);
+    //var rows2 = data2.length === 1 && comp(oriquer, data2[0]['properties']['name']) ? [] : data2.slice(0,4);
+    var rows2 = data2.slice(0,4);
     rows2 = rows2.length > 0? rows2.concat({'properties':{'name':'Tu posición'}}) : rows2;
 
     return (
