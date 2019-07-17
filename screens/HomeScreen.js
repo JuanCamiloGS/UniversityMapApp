@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity, ScrollView, TextInput, Keyboard} from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Alert, TouchableOpacity, ScrollView, TextInput, Keyboard, Image} from 'react-native';
 import MapboxGL from '@mapbox/react-native-mapbox-gl';
 //import {Labs, Deps, Canchas, Parqs} from '../resources/Localizaciones.js'
 //import {Labs, Deps, Canchas, Parqs} from '../resources/floors.js'
@@ -55,6 +55,7 @@ class Home extends Component<{}> {
       hidden: true,
       hidden2: false,
       hidden3: true,
+      hidden4: true,
       pointCurrent: {
         "type": "Point",
         "coordinates": [0,0],
@@ -219,20 +220,24 @@ class Home extends Component<{}> {
         if(!responseJson.hasOwnProperty("error")){
           this.setState({
             route: polyline.toGeoJSON(responseJson['trip']['legs'][0]['shape'],6),
-            legs: responseJson['trip']['legs'][0]
+            legs: responseJson['trip']['legs'][0],
+            hidden4: true
           })
           //Alert.alert(JSON.stringify(responseJson));
         }else{
           Alert.alert("No se encontró ruta");
+          this.setState({hidden4: true})
         }
       })
       .catch((error) => {
         console.error(error);
-        Alert.alert('Error de fetch: '+error)
+        Alert.alert('Error de conexión')
+        this.setState({hidden4: true})
       })
   }
 
   getRouteData(){
+    this.setState({hidden4: false})
     const obj = this.state.pointCurrent;
 
     var destiny = {};
@@ -257,13 +262,14 @@ class Home extends Component<{}> {
             (error) => {
                 navigator.geolocation.getCurrentPosition(
                   (position) => {dataFetcher(position, destiny)}, 
-                  (error) => {Alert.alert("No se pudo obtener localización")}, 
+                  (error) => {Alert.alert("No se pudo obtener localización");this.setState({hidden4: true})}, 
                   {enableHighAccuracy: true, timeout: 20000, maximumAge: 80000});
             },
             { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
         );
       }else{
         Alert.alert("Se requieren permisos para acceder a la localización de usuario")
+        this.setState({hidden4: true})
       }
     }else{
       const init = this.state.pointOrig;
@@ -278,9 +284,9 @@ class Home extends Component<{}> {
         origin['coords']['latitude'] = coords[0];
         origin['coords']['longitude'] = coords[1];
       }
-
       dataFetcher(origin, destiny);
     }
+    
   }
 
   // Funciones de Componentes
@@ -389,7 +395,7 @@ class Home extends Component<{}> {
     const slot = this.props.slot;
     const annotations = OptionSelect(slot);
 
-    const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
+    //const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
     const query = this.state.query;
     const data = this.findData(query);
     //const rows = data.length === 1 && comp(query, data[0]['properties']['name']) ? [] : data.slice(0,5);
@@ -494,9 +500,17 @@ class Home extends Component<{}> {
             {/* <Text style={{fontSize: 11}}>Piso: {this.state.pointCurrent['properties']['level']}</Text> */}
             <Text style={{fontSize: 11, paddingBottom:2}}>Piso: {this.state.pointCurrent['properties']['level'] || 'N/A'} | Otros nombres: {this.state.pointCurrent['properties']['alt_name'] || 'N/A'}</Text>
             
-            <TouchableOpacity style={styles.routeButton} onPress={getRouteData}>
-              <Text style={{fontSize: 10, textAlign: 'center'}}> TRAZAR RUTA </Text>
-            </TouchableOpacity>
+            <View style={styles.routeButtonWrapper}>
+              <TouchableOpacity style={styles.routeButton} onPress={getRouteData}>
+                <Text style={{fontSize: 10}}> TRAZAR RUTA </Text>
+              </TouchableOpacity>
+              <View style={styles.routeButtonWait}>
+                {!this.state.hidden4 &&
+                <Image style={{resizeMode: 'contain', height: 25}} source={require('../resources/loading.gif')}/>
+                }
+              </View>
+            </View>
+            
             <RouteDescription/>
             <Text>{this.state.pointCurrent['properties']['description']}</Text>
           </View>
@@ -589,7 +603,17 @@ const styles = StyleSheet.create({
       borderRadius: 3,
       backgroundColor: '#a4c2f2',
       marginVertical: 5,
-      width: width/4
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    routeButtonWrapper:{
+      flex: 1,
+      flexDirection: 'row'
+    },
+    routeButtonWait: {
+      flex: 2,
+      
     },
     menuContent: {
       paddingVertical: 14,
