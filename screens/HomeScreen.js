@@ -474,7 +474,7 @@ class Home extends Component<{}> {
               data={rows2} 
               defaultValue={oriquer}
               onChangeText={text => this.setState({ oriquer: text })}
-              placeholder="Origen: Tu ubicación actual"
+              placeholder={"Origen: "+this.state.pointOrig['properties']['name']}
               keyExtractor={(item, index) => ("S2"+index)}
               containerStyle={{margin: 2}}
               inputContainerStyle={{borderWidth: 0, borderBottomWidth: 1, marginBottom: 1}}
