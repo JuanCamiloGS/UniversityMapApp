@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, Image, View, SafeAreaView, ScrollView, Dimensions} from 'react-native';
 import {createDrawerNavigator, DrawerItems} from 'react-navigation';
 import HomeScreen from './screens/HomeScreen';
-import SettingsScreen from './screens/SettingsScreen';
+import HelpScreen from './screens/HelpScreen';
 
 import {Labs, Deps, Canchas, Parqs} from './resources/floors.js'
 import {General, Floors, POI, Outdoors} from './resources/floors.js'
@@ -38,14 +38,15 @@ const CustomDrawerComponent = (props) => (
       <Image style={{flex: 1, resizeMode: 'contain'}} source={require('./resources/headerlogo_un.png')} />
       
     </View>
-    <Text style={{paddingVertical: 5, paddingLeft: 10, backgroundColor: '#f5f5f0'}}>Marcadores importantes:</Text>
+    
     <View
       style={{
-        paddingTop: 5,
         borderBottomColor: 'black',
         borderBottomWidth: 3,
       }}
-    />
+    >
+      <Text style={{paddingVertical: 5, paddingLeft: 10, backgroundColor: '#f5f5f0'}}>Marcadores importantes:</Text>
+    </View>
     <DrawerItems {...props} />
   </SafeAreaView>
   
@@ -66,6 +67,9 @@ const AppDrawerNavigator = createDrawerNavigator({
     },
     Parqueaderos:{
       screen: props => <HomeScreen {...props} slot={4} wide={Wide} specific={Specific}/>
+    },
+    'Instrucciones de uso': {
+      screen: props => <HelpScreen {...props} propName={'Instrucciones'}/>
     }
   },{
     contentComponent: CustomDrawerComponent
