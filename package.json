@@ -12,7 +12,7 @@
     "@mapbox/react-native-mapbox-gl": "git+https://github.com/nitaliano/react-native-mapbox-gl.git",
     "native-base": "^2.12.1",
     "react": "16.8.3",
-    "react-native": "0.59.1",
+    "react-native": "0.62.3",
     "react-native-auto-height-image": "^1.1.0",
     "react-native-autocomplete-input": "^4.0.0",
     "react-native-autocomplete-search": "^1.0.8",
